@@ -1,0 +1,168 @@
+/*=============ESTILOS PRINCIPALES==========*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:wght@400;500&display=swap");
+
+/* Bajar foter */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* Usar estas clases para los colores */
+
+.tx-Oscuro {
+  color: #000000;
+}
+
+.tx-Gris {
+  color: #474747;
+}
+
+.tx-AzulLogo {
+  color: #0d2572;
+}
+
+.bgCelestePrincipal {
+  background-color: #7babac;
+}
+
+.bgClaro {
+  background-color: #edefec;
+}
+
+/* Usar estas clases para la tipografia importada */
+.tx-titulo {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.tx-Intermedio {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.tx-parrafo {
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+}
+
+/* Estilos Página prinicipal */
+
+.img-carrusel {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Publi imagenes */
+.publicidadMainArriba {
+  overflow: hidden;
+  width: 100%;
+}
+
+.publicidadMainArriba-content {
+  display: flex;
+  width: 300%;
+  animation: scrollImages 18s linear infinite;
+}
+
+.publicidadMainArriba-content img {
+  width: 33.33%;
+}
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-66.66%);
+  }
+}
+
+/* estilos de las cards */
+
+.iconoTitulo {
+  width: 100px;
+}
+
+.textoSecciones {
+  backdrop-filter: blur(20px);
+  text-align: justify;
+}
+
+.brilloImagenesSeccionPrincipal {
+  transition: filter 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Nuevo estilo para el botón "Ver detalles" */
+.btn-ver-detalles {
+  margin-top: 10px;
+  transition: filter 0.3s; /* Agrega una transición para el efecto hover */
+}
+
+/* Estilo de hover para la card y el botón */
+.brilloImagenesSeccionPrincipal:hover {
+  filter: brightness(1.02);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+}
+
+.fondoCamisetasNacionales {
+  background-image: url(../img/fondos/fondoInternacionales.svg);
+  background-position: center;
+  background-size: cover;
+}
+.fondoCamisetasInternacionales {
+  background-image: url(../img/fondos/World\ Map.svg);
+  background-position: center;
+  background-size: cover;
+}
+.fondoCamisetasKids {
+  background-image: url(../img/fondos/fondoKids.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+.card:hover h4 {
+  color: #000000;
+}
+
+/* zoom en imagenes */
+.brilloImagenesSeccionPrincipal img {
+  transition: transform 0.3s;
+}
+
+.brilloImagenesSeccionPrincipal:hover img {
+  transform: scale(1.1) rotate(1deg);
+}
+
+/* Medias Queryes */
+
+@media all and (min-width: 992px) {
+  .img-carrusel {
+    height: 450px;
+  }
+  .tamañoResponsiveImagenesDeSecciones {
+    height: 230px;
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .tamañoResponsiveImagenesDeSecciones {
+    height: 210px;
+    width: 185px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .tituloNacionalesFix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
