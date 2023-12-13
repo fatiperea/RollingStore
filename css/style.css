@@ -140,6 +140,18 @@ main {
   transform: scale(1.1) rotate(1deg);
 }
 
+/* navBar nacho*/
+.navbar{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;    
+  z-index: 1;
+  background-color: #474747;
+  border-bottom: 4px solid #7babac;
+     
+}
+
 /* Medias Queryes */
 
 @media all and (min-width: 992px) {
