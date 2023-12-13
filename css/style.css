@@ -150,7 +150,52 @@ main {
   background-color: #474747;
   border-bottom: 4px solid #7babac;
 }
+/*Estilo de la pag Administracion*/
+#tituloAdmin{
+  position: relative;
+  top: 90px;
+  margin-bottom: 110px;
+}
+#contenedorImg {
+  width: 100px;
+  height: 100px;
+}
 
+#tablaNacionales img,
+#tablaInternacionales img,
+#tablaNiños img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#contenedorBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#btnIngresaProducto,
+#btnElijeTabla,
+#inputBuscaProducto {
+  width: 60%;
+}
+
+#btnIngresaProducto,
+#btnElijeTabla,
+#btnElijeProducto,
+#inputBuscaProducto {
+  font-weight: bold;
+  color: #eee80d;
+  border: 2px solid #eee80d;
+}
+
+#btnEditar,
+#btnBorrar {
+  color: #474747;
+  border: 2px outset #edefec;
+  font-weight: bold;
+  background-color: #eee80d;
+  font-size: larger;
+}
 /*acerca de nosotros*/
 .acercaDNosotros {
   margin-top: 70px;
@@ -179,11 +224,7 @@ main {
   background-size: cover;
 }
 /* Medias Queryes */
-@media screen and (max-width: 1024px) {
-  .bgImagen {
-    background-image: url("");
-  }
-}
+
 @media all and (min-width: 992px) {
   .img-carrusel {
     height: 450px;
@@ -199,6 +240,14 @@ main {
     height: 210px;
     width: 185px;
   }
+  #btnIngresaProducto,
+  #btnElijeTabla,
+  #inputBuscaProducto {
+    width: 100%;
+  }
+  #contenedorBtn div {
+    width: 30%;
+  }
 }
 
 @media all and (max-width: 576px) {
@@ -206,5 +255,19 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #contenedorBtn div {
+    justify-content: center;
+    width: 95%;
+  }
+  #btnIngresaProducto,
+  #btnElijeTabla,
+  #inputBuscaProducto {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bgImagen {
+    background-image: url("");
   }
 }
