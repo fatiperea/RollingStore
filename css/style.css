@@ -141,15 +141,14 @@ main {
 }
 
 /* navBar nacho*/
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   position: fixed;
-  width: 100%;    
+  width: 100%;
   z-index: 1;
   background-color: #474747;
   border-bottom: 4px solid #7babac;
-     
 }
 /*Estilo de la pag Administracion*/
 
@@ -204,6 +203,7 @@ main {
     height: 230px;
     width: 230px;
   }
+  
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -211,7 +211,14 @@ main {
     height: 210px;
     width: 185px;
   }
-  
+  #btnIngresaProducto,
+  #btnElijeTabla,
+  #inputBuscaProducto {
+    width: 100%;
+  }
+  #contenedorBtn div {
+    width: 30%;
+  }
 }
 
 @media all and (max-width: 576px) {
@@ -219,5 +226,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #contenedorBtn div {
+    justify-content: center;
+    width: 95%;
+  }
+  #btnIngresaProducto,
+  #btnElijeTabla,
+  #inputBuscaProducto {
+    width: 100%;
   }
 }
