@@ -151,9 +151,39 @@ main {
   border-bottom: 4px solid #7babac;
      
 }
-
+/*acerca de nosotros*/
+.acercaDNosotros {
+  margin-top: 70px;
+}
+.cajaPerfilesNosotros {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+}
+.cajaPerfilesNosotros img {
+  border-radius: 50%;
+  width: 200px;
+}
+.titulosAcercaNosotros {
+  font-size: 50px;
+}
+.pAcercaNosostros {
+  font-size: 1.25em;
+}
+.colorPAcercaNosotros{
+  color: #459394;
+}
+.bgImagen {
+  background-image: url("../img/acercaDeNosotros/cancha_3.png");
+  background-size: cover;
+}
 /* Medias Queryes */
-
+@media screen and (max-width: 1024px) {
+  .bgImagen {
+    background-image: url("");
+  }
+}
 @media all and (min-width: 992px) {
   .img-carrusel {
     height: 450px;
