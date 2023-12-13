@@ -153,6 +153,18 @@ main {
 }
 /*Estilo de la pag Administracion*/
 
+#contenedorImg {
+  width: 90px;
+  height: 90px;
+}
+
+#tablaNacionales img,
+#tablaInternacionales img,
+#tablaNiños img {
+  width: 100%;
+  object-fit: cover;
+}
+
 #contenedorBtn {
   display: flex;
   flex-direction: row;
