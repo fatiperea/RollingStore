@@ -1,5 +1,6 @@
 /*=============ESTILOS PRINCIPALES==========*/
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'");
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:wght@400;500&display=swap");  agregue mas fuentes */
 
 /* Bajar foter */
 body {
@@ -140,7 +141,7 @@ main {
   transform: scale(1.1) rotate(1deg);
 }
 
-/* navBar nacho*/
+/* navBar footer nacho*/
 .navbar{
   display: flex;
   align-items: center;
@@ -153,6 +154,18 @@ main {
 
 .navImg {
   max-height: 60px;
+}
+
+.foot {
+  background-color: #474747;
+  font-family: 'Ubuntu', light;
+  font-size: medium;
+  color: #ffff;
+}
+
+.foot h6{
+  font-size: large;
+  font-family: 'Ubuntu', medium;
 }
 
 /* Medias Queryes */
