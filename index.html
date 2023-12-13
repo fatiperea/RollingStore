@@ -20,14 +20,100 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css" />
-
+  
     <!-- Título prinicipal y favicon -->
     <link rel="shortcut icon" href="./img/icono-pestaña.png" />
     <title>RollingStore</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg text-center shadow"
+        data-bs-theme="dark"
+      >
+        <div class="container text-center">
+          <div class="col-10 col-md-11 col-lg-4">
+            <a class="navbar-brand" href="#"
+              ><img
+                class="img-fluid"
+                src="./img/logo.png"
+                alt="logo rolling store"
+            /></a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link active dropdown-toggle px-md-3 px-lg-4"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Nacional
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Norte</a></li>
+                  <li><a class="dropdown-item" href="#">Buenos Aires</a></li>
+                  <li><a class="dropdown-item" href="#">Pais</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link active dropdown-toggle px-md-3 px-lg-4"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Internacional
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Europa</a></li>
+                  <li><a class="dropdown-item" href="#">Sudamerica</a></li>
+                  <li><a class="dropdown-item" href="#">Mundo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-disabled="true">Niños</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Buscar"
+                  id="inputBuscar"
+                  aria-describedby="busqueda"
+                />
+                <span class="input-group-text rounded-end" id="btnBuscar"
+                  ><i class="bi bi-search"></i
+                ></span>
+                <i
+                  class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
+                  style="font-size: x-large; color: #ffffff; padding-top: 5px"
+                ></i>
+              </div>
+            </form>
+            <div class="bg-info row-cols-1"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <!-- Página principal -->
     <main class="pt-0 pb-3 fondoPrincipal">
       <!-- SLIDER -->
