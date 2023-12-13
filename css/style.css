@@ -59,6 +59,10 @@ main {
   object-fit: cover;
 }
 
+#carouselPromos1 {
+  z-index: 0;
+}
+
 /* Publi imagenes */
 .publicidadMainArriba {
   overflow: hidden;
@@ -148,10 +152,10 @@ main {
   align-items: center;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   background-color: #474747;
   border-bottom: 4px solid #7babac;
-  font-size: large;
+  font-size: larger;
 }
 
 /*Estilo de la pag Administracion*/
