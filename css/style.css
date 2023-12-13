@@ -10,6 +10,8 @@ body {
 
 main {
   flex-grow: 1;
+  position: relative;
+  top: 20px;
 }
 
 /* Usar estas clases para los colores */
@@ -151,7 +153,11 @@ main {
   border-bottom: 4px solid #7babac;
 }
 /*Estilo de la pag Administracion*/
-
+#tituloAdmin{
+  position: relative;
+  top: 90px;
+  margin-bottom: 110px;
+}
 #contenedorImg {
   width: 100px;
   height: 100px;
