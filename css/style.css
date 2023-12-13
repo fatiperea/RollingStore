@@ -149,7 +149,10 @@ main {
   z-index: 1;
   background-color: #474747;
   border-bottom: 4px solid #7babac;
-     
+}
+
+.navImg {
+  max-height: 60px;
 }
 
 /* Medias Queryes */
