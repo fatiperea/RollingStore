@@ -154,8 +154,8 @@ main {
 /*Estilo de la pag Administracion*/
 
 #contenedorImg {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
 }
 
 #tablaNacionales img,
@@ -191,6 +191,7 @@ main {
   border: 2px outset #edefec;
   font-weight: bold;
   background-color: #eee80d;
+  font-size: larger;
 }
 
 /* Medias Queryes */
@@ -210,6 +211,7 @@ main {
     height: 210px;
     width: 185px;
   }
+  
 }
 
 @media all and (max-width: 576px) {
