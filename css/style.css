@@ -151,6 +151,35 @@ main {
   border-bottom: 4px solid #7babac;
      
 }
+/*Estilo de la pag Administracion*/
+
+#contenedorBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#btnIngresaProducto,
+#btnElijeTabla,
+#inputBuscaProducto {
+  width: 60%;
+}
+
+#btnIngresaProducto,
+#btnElijeTabla,
+#btnElijeProducto,
+#inputBuscaProducto {
+  font-weight: bold;
+  color: #eee80d;
+  border: 2px solid #eee80d;
+}
+
+#btnEditar,
+#btnBorrar {
+  color: #474747;
+  border: 2px outset #edefec;
+  font-weight: bold;
+  background-color: #eee80d;
+}
 
 /* Medias Queryes */
 
