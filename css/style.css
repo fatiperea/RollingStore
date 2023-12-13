@@ -151,7 +151,9 @@ main {
   z-index: 1;
   background-color: #474747;
   border-bottom: 4px solid #7babac;
+  font-size: large;
 }
+
 /*Estilo de la pag Administracion*/
 #tituloAdmin{
   position: relative;
