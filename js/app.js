@@ -1,4 +1,8 @@
+
 import Producto from "./classProducto.js";
+
+
+
 
 //constantes
 
@@ -55,5 +59,13 @@ const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
     
   btnIngresaProducto.addEventListener("click", mostrarModal);
   
+
   formProducto.addEventListener("submit", crearProducto);
   
+=======
+  //formContacto.addEventListener("submit", crearContacto);
+  
+
+import Producto from "./classProducto.js";
+
+
