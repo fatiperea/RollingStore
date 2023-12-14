@@ -20,9 +20,12 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-  
+
     <!-- Título prinicipal y favicon -->
     <link rel="shortcut icon" href="./img/icono-pestaña.png" />
     <title>RollingStore</title>
@@ -35,7 +38,7 @@
       >
         <div class="container text-center">
           <div class="col-10 col-md-11 col-lg-4">
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand" href="./index.html"
               ><img
                 class="img-fluid navImg"
                 src="./img/logo.png"
@@ -66,9 +69,21 @@
                   Nacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Norte</a></li>
-                  <li><a class="dropdown-item" href="#">Buenos Aires</a></li>
-                  <li><a class="dropdown-item" href="#">Pais</a></li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/error404.html"
+                      >Norte</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/error404.html"
+                      >Buenos Aires</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/error404.html"
+                      >Pais</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -82,17 +97,34 @@
                   Internacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Europa</a></li>
-                  <li><a class="dropdown-item" href="#">Sudamerica</a></li>
-                  <li><a class="dropdown-item" href="#">Mundo</a></li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/error404.html"
+                      >Europa</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/error404.html"
+                      >Sudamerica</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./pages/error404.html"
+                      >Mundo</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">Nosotros</a>
+                <a
+                  class="nav-link active"
+                  aria-disabled="true"
+                  href="./pages/acercaDeNosotros.html"
+                  >Nosotros</a
+                >
               </li>
             </ul>
-            
-            <form class="d-flex mt-3" role="search">
+
+            <form class="d-flex mt-3 ms-4 align-items-center justify-content-center" role="search">
               <div class="input-group">
                 <input
                   type="text"
@@ -228,9 +260,12 @@
       </section>
 
       <!-- Secciones por Categorias -->
-      <section class="container rounded-1 border mt-3">
+      <section class="container rounded-1 border my-3">
         <!-- Categoria nacionales -->
-        <article class="row justify-content-center align-items-center mb-5">
+        <article
+          class="row justify-content-center align-items-center mb-5"
+          id="contenedorNacionales"
+        >
           <!-- titulo nacionales -->
           <div
             class="tx-Gris py-4 ps-5 fondoCamisetasNacionales mb-3 tituloNacionalesFix"
@@ -566,77 +601,138 @@
         </article>
       </section>
     </main>
+
     <footer class="text-center text-lg-start foot">
       <section>
         <div class="container text-center text-md-start mt-5">
           <div class="row mt-3">
             <div class="col-auto col-md-12 text-md-center col-lg-3 mx-auto">
-              <p>
-                <img class="img-fluid" src="./img/logo.png" alt="logo rolling store">
+              <a href="./index.html">
+                <img
+                  class="img-fluid"
+                  src="./img/logo.png"
+                  alt="logo rolling store"
+                />
+              </a>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Norte</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Buenos Aires</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Pais</a
+                >
               </p>
             </div>
 
             <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Nacional
-              </h6>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Norte</a>
+              <h6 class="text-uppercase">Internacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Europa</a
+                >
               </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Buenos Aires</a>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Asia</a
+                >
               </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Pais</a>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Sudamerica</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Mundo</a
+                >
               </p>
             </div>
-
             <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Internacional
-              </h6>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Europa</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Asia</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Sudamerica</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Mundo</a>
+              <h6 class="text-uppercase">Nosotros</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/acercaDeNosotros.html"
+                  class="text-reset text-decoration-none"
+                  >Team 4</a
+                >
               </p>
             </div>
             <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Nosotros
-            </div>
-            <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Login
-              </h6>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Registro</a>
+              <h6 class="text-uppercase">Login</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Registro</a
+                >
               </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Olvide mi contraseña</a>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Olvide mi contraseña</a
+                >
               </p>
             </div>
 
             <div class="col-auto col-lg-2 mx-auto mb-4">
               <h6 class="text-uppercase">Siguenos:</h6>
-            <p><i class="bi-tiktok mx-2" style="font-size: x-large; color: #ffffff;"></i>
-              <i class="bi-instagram mx-2" style="font-size: x-large; color: #ffffff;"></i>
-                <i class="bi-twitter-x mx-2" style="font-size: x-large; color: #ffffff;"></i>
+              <p>
+                <a
+                  href="https://www.tiktok.com/es/"
+                  target="_blank"
+                  class="text-decoration-none footerEnlacesNegros"
+                >
+                  <i class="bi-tiktok mx-2 text-light fs-4"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-instagram mx-2 text-light fs-4"></i
+                ></a>
+                <a
+                  href="https://twitter.com/?lang=es"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-twitter-x mx-2 text-light fs-4"></i>
+                </a>
               </p>
             </div>
-
           </div>
-
         </div>
       </section>
-      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+      <div
+        class="text-center p-2"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
         <p>© RollingStore todos los derechos reservados</p>
       </div>
     </footer>
