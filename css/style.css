@@ -174,8 +174,10 @@ main {
 .foot h6{
   font-size: large;
   font-family: 'Ubuntu', medium;
+}
 
-
+.footerEnlacesNegros:hover {
+  color: black;
 }
 
 /*Estilo de la pag Administracion*/
