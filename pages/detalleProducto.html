@@ -20,22 +20,25 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
-  
+
     <!-- Título prinicipal y favicon -->
     <link rel="shortcut icon" href="../img/icono-pestaña.png" />
     <title>RollingStore</title>
   </head>
   <body>
     <header>
-        <nav
+      <nav
         class="navbar navbar-expand-lg text-center shadow"
         data-bs-theme="dark"
       >
         <div class="container text-center">
           <div class="col-10 col-md-11 col-lg-4">
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand" href="../index.html"
               ><img
                 class="img-fluid navImg"
                 src="../img/logo.png"
@@ -66,9 +69,21 @@
                   Nacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Norte</a></li>
-                  <li><a class="dropdown-item" href="#">Buenos Aires</a></li>
-                  <li><a class="dropdown-item" href="#">Pais</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Norte</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Buenos Aires</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Pais</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -82,17 +97,36 @@
                   Internacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Europa</a></li>
-                  <li><a class="dropdown-item" href="#">Sudamerica</a></li>
-                  <li><a class="dropdown-item" href="#">Mundo</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Europa</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Sudamerica</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Mundo</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">Nosotros</a>
+                <a
+                  class="nav-link active"
+                  aria-disabled="true"
+                  href="../pages/acercaDeNosotros.html"
+                  >Nosotros</a
+                >
               </li>
             </ul>
-            
-            <form class="d-flex mt-3" role="search">
+            <form
+              class="d-flex ms-4 align-items-center justify-content-center mt-3"
+              role="search"
+            >
               <div class="input-group">
                 <input
                   type="text"
@@ -104,10 +138,12 @@
                 <span class="input-group-text rounded-end" id="btnBuscar"
                   ><i class="bi bi-search"></i
                 ></span>
-                <i
-                  class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
-                  style="font-size: x-large; color: #ffffff; padding-top: 5px"
-                ></i>
+                <a href="../pages/login.html">
+                  <i
+                    class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
+                    style="font-size: x-large; color: #ffffff; padding-top: 5px"
+                  ></i>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -117,150 +153,229 @@
     </header>
     <!-- Página principal -->
     <main>
-        <main class="my-5">
- 
-            <section>
-              <article class="container pt-4">
-                <h2 class="my-4 text-start fst-italic tituloPagDetalles tx-Gris tx-titulo">
-                  Nacionales
-                </h2>
-                <hr class="hrDetalles" />
-                <!-- Carrousel -->
-        
-                <div class="mt-3 row">
-                  <div class="col-md-6 mt-md-5">
-                    <img src="../img/nacionales/river.jpg" class="img-fluid" alt="fotografía de camiseta deportiva">
-                  </div>
-                  
-                  <div class="col-md-5 textoDetallesProd">
-                    <h5 class="tituloDetallesProd tx-Gris">CAMISETA RIVER PLATE</h5>
-        
-                    <p class="textoPagDetalles tx-parrafo tx-Gris">Código:</p>
-                    <p class="precioDetalles fw-bold tx-parrafo">Precio: $10.000</p>
-        
-                    <!-- Agregar producto al carrito -->
-                    
-                      <div class=" text-center col-12  my-3 my-md-5 tx-parrafo btn btnAgregarCarrito">
-                        
-                        <a href="../pages/error404.html" class="linkAgregarCarrito"
-                        ><i class="bi bi-cart-fill"> </i>Agregar al carrito</a
-                      >
-                      </div>
-                    
-                    <p class="textoPagDetalles tx-parrafo tx-Gris">Stock:</p>
-                    <div class="mt-5">
-                      <p class="textoPagDetalles tx-parrafo tx-Gris">Medios de Pago</p>
-                      <img
-                        src="../img/VISA-Logo.png"
-                        class="img-fluid logoTarjeta"
-                        alt="logo de tarjeta visa"
-                      />
-                      <img
-                        src="../img/Mastercard_2019_logo.svg.png"
-                        class="img-fluid logoTarjeta mx-2"
-                        alt="logo de tarjeta mastercard"
-                      />
-                    </div>
-                  </div>
+      <main class="my-5">
+        <section>
+          <article class="container pt-4">
+            <h2
+              class="my-4 text-start fst-italic tituloPagDetalles tx-Gris tx-titulo"
+            >
+              Nacionales
+            </h2>
+            <hr class="hrDetalles" />
+            <!-- Carrousel -->
+
+            <div class="mt-3 row">
+              <div class="col-md-6 mt-md-5">
+                <img
+                  src="../img/nacionales/river.jpg"
+                  class="img-fluid"
+                  alt="fotografía de camiseta deportiva"
+                />
+              </div>
+
+              <div class="col-md-5 textoDetallesProd">
+                <h5 class="tituloDetallesProd tx-Gris">CAMISETA RIVER PLATE</h5>
+
+                <p class="textoPagDetalles tx-parrafo tx-Gris">Código:</p>
+                <p class="precioDetalles fw-bold tx-parrafo">Precio: $10.000</p>
+
+                <!-- Agregar producto al carrito -->
+
+                <div
+                  class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito"
+                >
+                  <a href="../pages/error404.html" class="linkAgregarCarrito"
+                    ><i class="bi bi-cart-fill"> </i>Agregar al carrito</a
+                  >
                 </div>
-              </article>
-            </section>
-            <section>
-              <div class="container mt-5">
-                <div class="row justify-content-around">
-                  <h6 class="descripcionDetallesProd fst-italic tx-Intermedio fw-bold">Descripcion</h6>
-                  <ul class="listaDescripcion tx-parrafo">
-                    <li>
-                      <span class="fw-bold tx-Gris"
-                        >INDUMENTARIA OFICIAL DE JUEGO CLUB ATLETICO RIVER PLATE.
-                      </span>
-                    </li>
-                    <li>
-                      Camiseta titular de poliéster liso sublimado rojo, con sponsors.
-                    </li>
-                    <li><span class="fw-bold tx-Gris">Material: </span>Poliéster.</li>
-                    <li><span class="fw-bold tx-Gris">Manga:</span> Corta</li>
-                    <li><span class="fw-bold tx-Gris">Adecuado para:</span> Todo el día.</li>
-                    <li>
-                      <span class="fw-bold tx-Gris">País del fabricante: </span> Argentina
-                    </li>
-                  </ul>
+
+                <p class="textoPagDetalles tx-parrafo tx-Gris">Stock:</p>
+                <div class="mt-5">
+                  <p class="textoPagDetalles tx-parrafo tx-Gris">
+                    Medios de Pago
+                  </p>
+                  <img
+                    src="../img/VISA-Logo.png"
+                    class="img-fluid logoTarjeta"
+                    alt="logo de tarjeta visa"
+                  />
+                  <img
+                    src="../img/Mastercard_2019_logo.svg.png"
+                    class="img-fluid logoTarjeta mx-2"
+                    alt="logo de tarjeta mastercard"
+                  />
                 </div>
               </div>
-            </section>
-          </main>
+            </div>
+          </article>
+        </section>
+        <section>
+          <div class="container mt-5">
+            <div class="row justify-content-around">
+              <h6
+                class="descripcionDetallesProd fst-italic tx-Intermedio fw-bold"
+              >
+                Descripcion
+              </h6>
+              <ul class="listaDescripcion tx-parrafo">
+                <li>
+                  <span class="fw-bold tx-Gris"
+                    >INDUMENTARIA OFICIAL DE JUEGO CLUB ATLETICO RIVER PLATE.
+                  </span>
+                </li>
+                <li>
+                  Camiseta titular de poliéster liso sublimado rojo, con
+                  sponsors.
+                </li>
+                <li>
+                  <span class="fw-bold tx-Gris">Material: </span>Poliéster.
+                </li>
+                <li><span class="fw-bold tx-Gris">Manga:</span> Corta</li>
+                <li>
+                  <span class="fw-bold tx-Gris">Adecuado para:</span> Todo el
+                  día.
+                </li>
+                <li>
+                  <span class="fw-bold tx-Gris">País del fabricante: </span>
+                  Argentina
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
     </main>
-    <footer class="text-center text-lg-start foot">
+    <footer class="text-center text-lg-start foot mt-3">
       <section>
         <div class="container text-center text-md-start mt-5">
           <div class="row mt-3">
             <div class="col-auto col-md-12 text-md-center col-lg-3 mx-auto">
-              <p>
-                <img class="img-fluid" src="../img/logo.png" alt="logo rolling store">
+              <a href="../index.html">
+                <img
+                  class="img-fluid"
+                  src="../img/logo.png"
+                  alt="logo rolling store"
+                />
+              </a>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Norte</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Buenos Aires</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Pais</a
+                >
               </p>
             </div>
 
             <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Nacional
-              </h6>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Norte</a>
+              <h6 class="text-uppercase">Internacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Europa</a
+                >
               </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Buenos Aires</a>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Asia</a
+                >
               </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Pais</a>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Sudamerica</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Mundo</a
+                >
               </p>
             </div>
-
             <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Internacional
-              </h6>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Europa</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Asia</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Sudamerica</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Mundo</a>
+              <h6 class="text-uppercase">Nosotros</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/acercaDeNosotros.html"
+                  class="text-reset text-decoration-none"
+                  >Team 4</a
+                >
               </p>
             </div>
             <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Nosotros
-            </div>
-            <div class="col-auto mx-auto mb-4">
-              <h6 class="text-uppercase">
-                Login
-              </h6>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Registro</a>
+              <h6 class="text-uppercase">Login</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Registro</a
+                >
               </p>
-              <p>
-                <a href="#!" class="text-reset text-decoration-none">Olvide mi contraseña</a>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Olvide mi contraseña</a
+                >
               </p>
             </div>
 
             <div class="col-auto col-lg-2 mx-auto mb-4">
-              <h6 class="text-uppercase">Siguenos:</h6>
-            <p><i class="bi-tiktok mx-2" style="font-size: x-large; color: #ffffff;"></i>
-              <i class="bi-instagram mx-2" style="font-size: x-large; color: #ffffff;"></i>
-                <i class="bi-twitter-x mx-2" style="font-size: x-large; color: #ffffff;"></i>
+              <h6 class="text-uppercase">Siguenos</h6>
+              <p>
+                <a
+                  href="https://www.tiktok.com/es/"
+                  target="_blank"
+                  class="text-decoration-none footerEnlacesNegros"
+                >
+                  <i class="bi-tiktok mx-2 text-light fs-4"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-instagram mx-2 text-light fs-4"></i
+                ></a>
+                <a
+                  href="https://twitter.com/?lang=es"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-twitter-x mx-2 text-light fs-4"></i>
+                </a>
               </p>
             </div>
-
           </div>
-
         </div>
       </section>
-      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+      <div
+        class="text-center p-2"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
         <p>© RollingStore todos los derechos reservados</p>
       </div>
     </footer>
