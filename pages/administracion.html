@@ -38,9 +38,9 @@
       >
         <div class="container text-center">
           <div class="col-10 col-md-11 col-lg-4">
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand" href="../index.html"
               ><img
-                class="img-fluid"
+                class="img-fluid navImg"
                 src="../img/logo.png"
                 alt="logo rolling store"
             /></a>
@@ -69,9 +69,21 @@
                   Nacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Norte</a></li>
-                  <li><a class="dropdown-item" href="#">Buenos Aires</a></li>
-                  <li><a class="dropdown-item" href="#">País</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Norte</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Buenos Aires</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Pais</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -85,16 +97,36 @@
                   Internacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Europa</a></li>
-                  <li><a class="dropdown-item" href="#">Sudamérica</a></li>
-                  <li><a class="dropdown-item" href="#">Mundo</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Europa</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Sudamerica</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Mundo</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">Niños</a>
+                <a
+                  class="nav-link active"
+                  aria-disabled="true"
+                  href="../pages/acercaDeNosotros.html"
+                  >Nosotros</a
+                >
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form
+              class="d-flex ms-4 align-items-center justify-content-center mt-3"
+              role="search"
+            >
               <div class="input-group">
                 <input
                   type="text"
@@ -106,10 +138,12 @@
                 <span class="input-group-text rounded-end" id="btnBuscar"
                   ><i class="bi bi-search"></i
                 ></span>
-                <i
-                  class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
-                  style="font-size: x-large; color: #ffffff; padding-top: 5px"
-                ></i>
+                <a href="../pages/login.html">
+                  <i
+                    class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
+                    style="font-size: x-large; color: #ffffff; padding-top: 5px"
+                  ></i>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -727,7 +761,9 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="descripcion" class="form-label">Descripción</label>
+                  <label for="descripcion" class="form-label"
+                    >Descripción</label
+                  >
                   <input
                     type="text"
                     id="descripcion"
