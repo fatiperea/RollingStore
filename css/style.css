@@ -1,5 +1,6 @@
 /*=============ESTILOS PRINCIPALES==========*/
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'");
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Ubuntu:wght@400;500&display=swap");  agregue mas fuentes */
 
 /* Bajar foter */
 body {
@@ -57,6 +58,10 @@ main {
 .img-carrusel {
   height: 300px;
   object-fit: cover;
+}
+
+#carouselPromos1 {
+  z-index: 0;
 }
 
 /* Publi imagenes */
@@ -148,10 +153,31 @@ main {
   align-items: center;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   background-color: #474747;
   border-bottom: 4px solid #7babac;
+  font-size: larger;
 }
+
+
+.navImg {
+  max-height: 60px;
+}
+
+.foot {
+  background-color: #474747;
+  font-family: 'Ubuntu', light;
+  font-size: medium;
+  color: #ffff;
+}
+
+.foot h6{
+  font-size: large;
+  font-family: 'Ubuntu', medium;
+
+
+}
+
 /*Estilo de la pag Administracion*/
 #tituloAdmin{
   position: relative;
@@ -197,13 +223,44 @@ main {
   font-weight: bold;
   background-color: #eee80d;
   font-size: larger;
+
 }
 
-  
+/*acerca de nosotros*/
+.acercaDNosotros {
+  margin-top: 70px;
+}
+.cajaPerfilesNosotros {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+}
+.cajaPerfilesNosotros img {
+  border-radius: 50%;
+  width: 200px;
+}
+.titulosAcercaNosotros {
+  font-size: 50px;
+}
+.pAcercaNosostros {
+  font-size: 1.25em;
+}
+.colorPAcercaNosotros {
+  color: #459394;
+}
+.bgImagen {
+  background-image: url("../img/acercaDeNosotros/cancha_3.png");
+  background-size: cover;
+}
 
-
+ 
 /* Medias Queryes */
-
+@media screen and (max-width: 1024px) {
+  .bgImagen {
+    background-image: url("");
+  }
+}
 @media all and (min-width: 992px) {
   .img-carrusel {
     height: 450px;

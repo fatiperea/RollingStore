@@ -1,3 +1,4 @@
+formIngresaProducto
 
 
 /*const modalIngresoProducto = new bootstrap.Modal(
@@ -18,3 +19,6 @@ const btnIngresaProducto=document.getElementById("btnIngresaProducto");
   
   //formContacto.addEventListener("submit", crearContacto);
   
+
+import Producto from "./classProducto.js";
+
