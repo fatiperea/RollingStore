@@ -1,5 +1,7 @@
 import Producto from "./classProducto";
 
+//constantes
+
 const modalIngresoProducto = new bootstrap.Modal(document.getElementById("administrarProducto"));
 const btnIngresaProducto=document.getElementById("btnIngresaProducto");
 const formProducto=document.querySelector("form");
@@ -14,6 +16,8 @@ stock=getElementById("stock");
 const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
 
   console.log("modal ",modalIngresoProducto);
+
+//funciones
 
   const crearProducto = (e) => {
     e.preventDefault();
@@ -30,7 +34,7 @@ const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
       
       listaProductos.push(producto);
   
-      console.log(listaProductos);
+      console.log("lista prod ",listaProductos);
   
       formProducto.reset();
   
@@ -38,9 +42,8 @@ const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
   
       //llenarFila(producto, listaProducto.length);
   
-      adminContacto.hide();
+      modalIngresoProducto.hide();
   
-      
   };
   
 
