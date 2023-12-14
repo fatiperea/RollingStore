@@ -1,4 +1,4 @@
-export default class Producto {
+class Producto {
   #id;
   nombre;
   precio;
