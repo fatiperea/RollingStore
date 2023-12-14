@@ -261,6 +261,9 @@ main {
 }
 .btnAgregarCarrito {
   background: #474747;
+
+}
+.btnAgregarCarrito .linkAgregarCarrito{
   color: white;
   font-size: 1.5em;
 }
@@ -291,6 +294,12 @@ main {
 }
 .textoPagDetalles {
   font-size: 1.5em;
+}
+.linkAgregarCarrito{
+  text-decoration: none;
+}
+.btnAgregarCarrito .linkAgregarCarrito:hover{
+  color:  #459394;
 }
 /* Medias Queryes */
 @media screen and (max-width: 1024px) {
