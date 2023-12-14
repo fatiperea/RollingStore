@@ -30,9 +30,9 @@
     <link rel="shortcut icon" href="../img/icono-pestaña.png" />
     <title>Carrito de Compras</title>
   </head>
-<body>
+  <body>
     <header>
-        <nav
+      <nav
         class="navbar navbar-expand-lg text-center shadow"
         data-bs-theme="dark"
       >
@@ -70,9 +70,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="error404.html"
-                      >Norte</a
-                    >
+                    <a class="dropdown-item" href="error404.html">Norte</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="error404.html"
@@ -80,9 +78,7 @@
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="error404.html"
-                      >Pais</a
-                    >
+                    <a class="dropdown-item" href="error404.html">Pais</a>
                   </li>
                 </ul>
               </li>
@@ -98,19 +94,13 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="error404.html"
-                      >Europa</a
-                    >
+                    <a class="dropdown-item" href="error404.html">Europa</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="error404.html"
-                      >Sudamerica</a
-                    >
+                    <a class="dropdown-item" href="error404.html">Sudamerica</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="error404.html"
-                      >Mundo</a
-                    >
+                    <a class="dropdown-item" href="error404.html">Mundo</a>
                   </li>
                 </ul>
               </li>
@@ -125,7 +115,10 @@
               </li>
             </ul>
 
-            <form class="d-flex mt-3 ms-4 align-items-center justify-content-center" role="search">
+            <form
+              class="d-flex mt-3 ms-4 align-items-center justify-content-center"
+              role="search"
+            >
               <div class="input-group">
                 <input
                   type="text"
@@ -138,11 +131,11 @@
                   ><i class="bi bi-search"></i
                 ></span>
                 <a href="login.html">
-                <i
-                  class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
-                  style="font-size: x-large; color: #ffffff; padding-top: 5px"
-                ></i>
-              </a>
+                  <i
+                    class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
+                    style="font-size: x-large; color: #ffffff; padding-top: 5px"
+                  ></i>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -151,213 +144,204 @@
       </nav>
     </header>
     <main class="carritoDeCompras container">
-        <h2 class="my-3 text-center fst-italic tituloPagDetalles tx-Gris tx-titulo">
-           Mi Carrito
-          </h2>
-        <div class="table-responsive">
-            
-                <table 
-                class="table table-success table-striped table-hover"
-                  id="tablaCarritoDeCompras"
-                >
-                  <thead class="align-middle">
-                    <tr>
-                      <th scope="col">
-                        Código <br />
-                        Único
-                      </th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Precio</th>
-                      <th scope="col">
-                        Categoría: <br />
-                        Nacional
-                      </th>
-                      <th scope="col">Imagen</th>
-                      <th scope="col">Quitar del Carrito</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Campeón Mundial 10</td>
-                      <td>$149000</td>
-                      <td>
-                        Selección Argentina - <br />
-                        Qatar 2022
-                      </td>
-                      <td>
-                        <div id="contenedorImg">
-                          <img
-                            src="../img/nacionales/seleccion/mundial.jpg"
-                            alt="Camiseta Messi mundial"
-                            class="img-fluid"
-                          />
-                        </div>
-                      </td>
-                     
-                      <td>
-                     
-                        <button class="btn" id="btnBorrarDelCarrito">
-                          <i class="bi bi-trash3-fill"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <a class="btn btnFinalizarCompra tx-parrafo w-100 my-3 my-md-5" href="#" role="button">Finalizar Compra</a>
-                
-                  
-        </div>
+      <h2
+        class="my-3 text-center fst-italic tituloPagCarrito tx-Gris tx-titulo"
+      >
+        Mi Carrito
+      </h2>
+      <div class="table-responsive">
+        <table
+          class="table table-success table-striped table-hover"
+          id="tablaCarritoDeCompras"
+        >
+          <thead class="align-middle">
+            <tr>
+              <th scope="col">
+                Código <br />
+                Único
+              </th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">
+                Categoría: <br />
+                Nacional
+              </th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Quitar del Carrito</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Campeón Mundial 10</td>
+              <td>$149000</td>
+              <td>
+                Selección Argentina - <br />
+                Qatar 2022
+              </td>
+              <td>
+                <div id="contenedorImgCarrito">
+                  <img
+                    src="../img/nacionales/seleccion/mundial.jpg"
+                    alt="Camiseta Messi mundial"
+                    class="img-fluid"
+                  />
+                </div>
+              </td>
+
+              <td>
+                <button class="btn" id="btnBorrarDelCarrito">
+                  <i class="bi bi-trash3-fill"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <a
+        class="btn tx-parrafo w-100 my-3 my-md-5"
+        id="btnFinalizarCompra"
+        href="#"
+        role="button"
+        >Finalizar Compra</a
+      >
     </main>
     <footer class="text-center text-lg-start foot">
-        <section>
-          <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-              <div class="col-auto col-md-12 text-md-center col-lg-3 mx-auto">
-                <a href="../index.html">
-                  <img
-                    class="img-fluid"
-                    src="../img/logo.png"
-                    alt="logo rolling store"
-                  />
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-auto col-md-12 text-md-center col-lg-3 mx-auto">
+              <a href="../index.html">
+                <img
+                  class="img-fluid"
+                  src="../img/logo.png"
+                  alt="logo rolling store"
+                />
+              </a>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Norte</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Buenos Aires</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="./pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Pais</a
+                >
+              </p>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Internacional</h6>
+              <p class="footerEnlacesNegros">
+                <a href="error404.html" class="text-reset text-decoration-none"
+                  >Europa</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a href="error404.html" class="text-reset text-decoration-none"
+                  >Asia</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a href="error404.html" class="text-reset text-decoration-none"
+                  >Sudamerica</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a href="error404.html" class="text-reset text-decoration-none"
+                  >Mundo</a
+                >
+              </p>
+            </div>
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nosotros</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="acercaDeNosotros.html"
+                  class="text-reset text-decoration-none"
+                  >Team 4</a
+                >
+              </p>
+            </div>
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Login</h6>
+              <p class="footerEnlacesNegros">
+                <a href="error404.html" class="text-reset text-decoration-none"
+                  >Registro</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a href="error404.html" class="text-reset text-decoration-none"
+                  >Olvide mi contraseña</a
+                >
+              </p>
+            </div>
+
+            <div class="col-auto col-lg-2 mx-auto mb-4">
+              <h6 class="text-uppercase">Siguenos</h6>
+              <p>
+                <a
+                  href="https://www.tiktok.com/es/"
+                  target="_blank"
+                  class="text-decoration-none footerEnlacesNegros"
+                >
+                  <i class="bi-tiktok mx-2 text-light fs-4"></i>
                 </a>
-              </div>
-  
-              <div class="col-auto mx-auto mb-4">
-                <h6 class="text-uppercase">Nacional</h6>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="./pages/error404.html"
-                    class="text-reset text-decoration-none"
-                    >Norte</a
-                  >
-                </p>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="./pages/error404.html"
-                    class="text-reset text-decoration-none"
-                    >Buenos Aires</a
-                  >
-                </p>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="./pages/error404.html"
-                    class="text-reset text-decoration-none"
-                    >Pais</a
-                  >
-                </p>
-              </div>
-  
-              <div class="col-auto mx-auto mb-4">
-                <h6 class="text-uppercase">Internacional</h6>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="error404.html"
-                    class="text-reset text-decoration-none"
-                    >Europa</a
-                  >
-                </p>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="error404.html"
-                    class="text-reset text-decoration-none"
-                    >Asia</a
-                  >
-                </p>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="error404.html"
-                    class="text-reset text-decoration-none"
-                    >Sudamerica</a
-                  >
-                </p>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="error404.html"
-                    class="text-reset text-decoration-none"
-                    >Mundo</a
-                  >
-                </p>
-              </div>
-              <div class="col-auto mx-auto mb-4">
-                <h6 class="text-uppercase">Nosotros</h6>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="acercaDeNosotros.html"
-                    class="text-reset text-decoration-none"
-                    >Team 4</a
-                  >
-                </p>
-              </div>
-              <div class="col-auto mx-auto mb-4">
-                <h6 class="text-uppercase">Login</h6>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="error404.html"
-                    class="text-reset text-decoration-none"
-                    >Registro</a
-                  >
-                </p>
-                <p class="footerEnlacesNegros">
-                  <a
-                    href="error404.html"
-                    class="text-reset text-decoration-none"
-                    >Olvide mi contraseña</a
-                  >
-                </p>
-              </div>
-  
-              <div class="col-auto col-lg-2 mx-auto mb-4">
-                <h6 class="text-uppercase">Siguenos</h6>
-                <p>
-                  <a
-                    href="https://www.tiktok.com/es/"
-                    target="_blank"
-                    class="text-decoration-none footerEnlacesNegros"
-                  >
-                    <i class="bi-tiktok mx-2 text-light fs-4"></i>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    class="text-decoration-none"
-                  >
-                    <i class="bi-instagram mx-2 text-light fs-4"></i
-                  ></a>
-                  <a
-                    href="https://twitter.com/?lang=es"
-                    target="_blank"
-                    class="text-decoration-none"
-                  >
-                    <i class="bi-twitter-x mx-2 text-light fs-4"></i>
-                  </a>
-                </p>
-              </div>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-instagram mx-2 text-light fs-4"></i
+                ></a>
+                <a
+                  href="https://twitter.com/?lang=es"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-twitter-x mx-2 text-light fs-4"></i>
+                </a>
+              </p>
             </div>
           </div>
-        </section>
-        <div
-          class="text-center p-2"
-          style="background-color: rgba(0, 0, 0, 0.05)"
-        >
-          <p>© RollingStore todos los derechos reservados</p>
         </div>
-      </footer>
-  
-      <!-- Scripts -->
-      <!-- script bootstrap -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-      ></script>
-      <!-- script de FontAwesome -->
-      <script
-        src="https://kit.fontawesome.com/a19956b3b8.js"
-        crossorigin="anonymous"
-      ></script>
-      <!-- script del TEAM -->
-      <script src="../js/app.js" type="module"></script>
-    </body>
-  </html>
-  
+      </section>
+      <div
+        class="text-center p-2"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        <p>© RollingStore todos los derechos reservados</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- script bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- script de FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/a19956b3b8.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- script del TEAM -->
+    <script src="../js/app.js" type="module"></script>
+  </body>
+</html>

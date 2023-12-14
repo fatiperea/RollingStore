@@ -173,7 +173,7 @@ main {
 .foot h6 {
   font-size: large;
   font-family: "Ubuntu", medium;
-  font-family: 'Ubuntu', medium;
+  font-family: "Ubuntu", medium;
 }
 
 .footerEnlacesNegros:hover {
@@ -302,23 +302,36 @@ main {
   color: #459394;
 }
 /*carrito de compras*/
+.tituloPagCarrito {
+  font-size: 4em;
+}
 .linkFinalizarCompra {
   text-decoration: none;
 }
-.btnFinalizarCompra {
-  background: #474747;
-}
-.carritoDeCompras{
+.carritoDeCompras {
   margin: 70px auto 70px;
-  
 }
-.btnFinalizarCompra{
+#btnFinalizarCompra {
+  background: #474747;
   color: white;
   font-size: 1.5em;
 }
-.btnFinalizarCompra:hover {
+#btnFinalizarCompra:hover {
   color: #459394;
+  background: white;
 }
+#contenedorImgCarrito {
+  width: 100px;
+  height: 100px;
+}
+#btnBorrarDelCarrito {
+  color: #474747;
+  border: 2px outset #edefec;
+  font-weight: bold;
+  background-color: #eee80d;
+  font-size: larger;
+}
+
 /* Medias Queryes */
 @media screen and (max-width: 1024px) {
   .bgImagen {
