@@ -1,4 +1,4 @@
-import Producto from "./classProducto";
+import Producto from "./classProducto.js";
 
 //constantes
 
