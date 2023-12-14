@@ -113,7 +113,7 @@ main {
 /* Estilo de hover para la card y el botón */
 .brilloImagenesSeccionPrincipal:hover {
   filter: brightness(1.02);
-  cursor: pointer;
+ 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border: 1px solid black;
 }
@@ -260,13 +260,26 @@ main {
   list-style: none;
   font-size: 1.25em;
 }
+
 .btnAgregarCarrito {
   background: #474747;
 }
+
 .btnAgregarCarrito .linkAgregarCarrito {
-  color: white;
+  color: #edefec;
   font-size: 1.5em;
 }
+
+.btnAgregarCarrito:hover {
+  background-color: #ffffff; /* Fondo blanco en hover */
+}
+
+.btnAgregarCarrito:hover .linkAgregarCarrito {
+  color: #459394; /* Color del texto al hover */
+}
+
+
+
 .precioDetalles {
   color: #459394;
   font-size: 2.5em;
@@ -298,9 +311,7 @@ main {
 .linkAgregarCarrito {
   text-decoration: none;
 }
-.btnAgregarCarrito .linkAgregarCarrito:hover {
-  color: #459394;
-}
+
 /*carrito de compras*/
 .tituloPagCarrito {
   font-size: 4em;
@@ -311,12 +322,12 @@ main {
 .carritoDeCompras {
   margin: 70px auto 70px;
 }
-#btnFinalizarCompra {
+.btnFinalizarCompra {
   background: #474747;
   color: white;
   font-size: 1.5em;
 }
-#btnFinalizarCompra:hover {
+.btnFinalizarCompra:hover {
   color: #459394;
   background: white;
 }
