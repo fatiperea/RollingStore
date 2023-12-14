@@ -1,29 +1,53 @@
-
-
-/*const modalIngresoProducto = new bootstrap.Modal(
-    document.querySelector("modal")
-  );*/
+import Producto from "./classProducto";
 
 const modalIngresoProducto = new bootstrap.Modal(document.getElementById("administrarProducto"));
 const btnIngresaProducto=document.getElementById("btnIngresaProducto");
 const formProducto=document.querySelector("form");
 
-const nombre=getElementById(),
-precio=getElementById(),
-categoria=getElementById(),
-img=getElementById(),
-descripcion=getElementById(),
-stock=getElementById();
+const nombre=getElementById("nombre"),
+precio=getElementById("precio"),
+categoria=getElementById("categoria"),
+img=getElementById(img),
+descripcion=getElementById("descripcion"),
+stock=getElementById("stock");
+
+const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
 
   console.log("modal ",modalIngresoProducto);
+
+  const crearProducto = (e) => {
+    e.preventDefault();
+  
+      const producto = new Producto(
+        undefined,
+        nombre.value,
+        precio.value,
+        categoria.value,
+        img.value,
+        stock.value
+      );
+      console.log("prod ", producto);
+      
+      listaProductos.push(producto);
+  
+      console.log(listaProductos);
+  
+      formProducto.reset();
+  
+      //guardaLocalStorage();
+  
+      //llenarFila(producto, listaProducto.length);
+  
+      adminContacto.hide();
+  
+      
+  };
+  
 
   const mostrarModal = () => {
     modalIngresoProducto.show();
     formProducto.reset();
   };
-
-
-
 
     
   btnIngresaProducto.addEventListener("click", mostrarModal);
