@@ -113,7 +113,7 @@ main {
 /* Estilo de hover para la card y el botón */
 .brilloImagenesSeccionPrincipal:hover {
   filter: brightness(1.02);
-  cursor: pointer;
+ 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border: 1px solid black;
 }
