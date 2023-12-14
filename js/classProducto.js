@@ -74,7 +74,7 @@ export default class Producto {
       precio: this.precio,
       categoria: this.categoria,
       img: this.img,
-      descripcion: his.descripcion,
+      descripcion: this.descripcion,
       stock: this.stock,
     };
   }

@@ -5,13 +5,16 @@ import Producto from "./classProducto.js";
 const modalIngresoProducto = new bootstrap.Modal(
   document.getElementById("administrarProducto")
 );
+
+//console.log("modal ", modalIngresoProducto);
+
 const btnIngresaProducto = document.getElementById("btnIngresaProducto");
 
-console.log("boton ingresa", btnIngresaProducto);
+//console.log("boton ingresa", btnIngresaProducto);
 
-const formProducto = document.querySelector("form");
+const formProducto = document.getElementById("formProducto");
 
-console.log("form ",formProducto);
+//console.log("form ",formProducto);
 
 const nombre = document.getElementById("nombre"),
   precio = document.getElementById("precio"),
@@ -21,8 +24,6 @@ const nombre = document.getElementById("nombre"),
   stock = document.getElementById("stock");
 
 const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
-
-console.log("modal ", modalIngresoProducto);
 
 //funciones
 
@@ -46,13 +47,13 @@ const crearProducto = (e) => {
 
   console.log("prod ", producto);
 
-  //listaProductos.push(producto);
+  listaProductos.push(producto);
 
-  //console.log("lista prod ", listaProductos);
+  console.log("lista prod ", listaProductos);
 
-  //formProducto.reset();
+  formProducto.reset();
 
-  //guardaLocalStorage();
+  guardaLocalStorage();
 
   //llenarFila(producto, listaProducto.length);
 
@@ -62,7 +63,6 @@ const crearProducto = (e) => {
 function guardaLocalStorage() {
   localStorage.setItem("listaProduKey", JSON.stringify(listaProductos));
 }
-
 
 const mostrarModal = () => {
   modalIngresoProducto.show();
