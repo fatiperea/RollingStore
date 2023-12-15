@@ -58,7 +58,7 @@ const crearProducto = (e) => {
   // ventana del sweet alert
   Swal.fire({
     title: "Buen trabajo!",
-    text: `Agregaste un nuevo producto ${producto.nombre.toUpperCase()}`,
+    text: `Agregaste una nueva camiseta de ${producto.nombre.toUpperCase()}`,
     icon: "success",
   });
 };
@@ -85,7 +85,7 @@ const crearProductoInternacional = (e) => {
   //ventana de swwt alert
   Swal.fire({
     title: "Buen trabajo!",
-    text: `Agregaste un nuevo producto ${productoInternacionales.nombre.toUpperCase()}`,
+    text: `Agregaste una nueva camiseta de ${productoInternacionales.nombre.toUpperCase()}`,
     icon: "success",
   });
 };
@@ -149,14 +149,29 @@ const crearFilaNacionales = (producto, nroFila) => {
 };
 
 window.borrarProducto = (idProducto) => {
-  const posicionProducto = listaProductos.findIndex(
-    (itemProducto) => itemProducto.id === idProducto
-  );
-  listaProductos.splice(posicionProducto, 1);
-  guardaLocalStorage();
-  const tablaNacionales = document.querySelector("#tbody-naciolaes");
-  tablaNacionales.removeChild(tablaNacionales.children[posicionProducto]);
-  recargarPagina();
+  //ventana alert
+  Swal.fire({
+    title: " ¿Borrar Casaca?",
+    text: "No podrás revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Borrar!",
+    cancelButtonText: "Conservar Casaca",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //logica
+      const posicionProducto = listaProductos.findIndex(
+        (itemProducto) => itemProducto.id === idProducto
+      );
+      listaProductos.splice(posicionProducto, 1);
+      guardaLocalStorage();
+      const tablaNacionales = document.querySelector("#tbody-naciolaes");
+      tablaNacionales.removeChild(tablaNacionales.children[posicionProducto]);
+      recargarPagina();
+    }
+  });
 };
 
 const crearFilaInternacionales = (
@@ -192,15 +207,34 @@ const crearFilaInternacionales = (
 };
 
 window.borrarProductoInternacionales = (idProductoInternacionales) => {
-  const posicionProducto = listaProductosInternacionales.findIndex(
-    (itemProductoInternacionales) =>
-      itemProductoInternacionales.id === idProductoInternacionales
-  );
-  listaProductosInternacionales.splice(posicionProducto, 1);
-  guardaLocalStorageInternacionales();
-  const tablaInternacionales = document.querySelector("#tbody-internacionales");
-  tablaInternacionales.removeChild(tablaInternacionales.children[posicionProducto]);
-  recargarPagina();
+  //ventana alert
+  Swal.fire({
+    title: " ¿Borrar Casaca?",
+    text: "No podrás revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Borrar!",
+    cancelButtonText: "Conservar Casaca",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //logica del borrado
+      const posicionProducto = listaProductosInternacionales.findIndex(
+        (itemProductoInternacionales) =>
+          itemProductoInternacionales.id === idProductoInternacionales
+      );
+      listaProductosInternacionales.splice(posicionProducto, 1);
+      guardaLocalStorageInternacionales();
+      const tablaInternacionales = document.querySelector(
+        "#tbody-internacionales"
+      );
+      tablaInternacionales.removeChild(
+        tablaInternacionales.children[posicionProducto]
+      );
+      recargarPagina();
+    }
+  });
 };
 
 const cargaInicial = () => {
