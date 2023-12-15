@@ -55,6 +55,12 @@ const crearProducto = (e) => {
   guardaLocalStorage();
   crearFilaNacionales(producto, listaProductos.length);
   modalIngresoProducto.hide();
+  // ventana del sweet alert
+  Swal.fire({
+    title: "Buen trabajo!",
+    text: `Agregaste un nuevo producto ${producto.nombre.toUpperCase()}`,
+    icon: "success",
+  });
 };
 
 const crearProductoInternacional = (e) => {
@@ -73,8 +79,15 @@ const crearProductoInternacional = (e) => {
   guardaLocalStorageInternacionales();
   crearFilaInternacionales(
     productoInternacionales,
-    listaProductosInternacionales.length);
+    listaProductosInternacionales.length
+  );
   modalIngresoIternacionales.hide();
+  //ventana de swwt alert
+  Swal.fire({
+    title: "Buen trabajo!",
+    text: `Agregaste un nuevo producto ${productoInternacionales.nombre.toUpperCase()}`,
+    icon: "success",
+  });
 };
 
 const recargarPagina = () => {
