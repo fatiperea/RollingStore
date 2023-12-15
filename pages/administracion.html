@@ -159,7 +159,6 @@
       <!--Botón y buscador-->
 
       <div class="row tx-Intermedio my-3" id="contenedorBtn">
-        
         <div class="col col-12 col-sm-4 col-lg-4 mb-3">
           <button class="btn btn-outline-light" id="btnIngresaProducto">
             INGRESAR <br />
@@ -396,129 +395,26 @@
         </div>
 
         <!--Tabla internacionales-->
-        <!-- <div class="table-responsive">
+        <div class="table-responsive">
           <table
             class="table table-success table-striped table-hover"
             id="tablaInternacionales"
           >
             <thead class="align-middle">
               <tr>
-                <th scope="col">
-                  Código <br />
-                  Único
-                </th>
+                <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th>
-                <th scope="col">
-                  Categoría: <br />
-                  Internacional
-                </th>
+                <th scope="col">Categoría:</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Inter Miami 2022/2023</td>
-                <td>$60000</td>
-                <td>EE UU</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="https://rolling-store-img.netlify.app/img/Internacionales/miami.jpg"
-                      alt="Camiseta Inter Miami"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Inter Miami 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Barcelona</td>
-                <td>$40000</td>
-                <td>Europa</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="https://rolling-store-img.netlify.app/img/Internacionales/barcelona.jpg"
-                      alt="Camiseta Barcelona"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Barcelona 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Bayern Múnich</td>
-                <td>$40000</td>
-                <td>Europa</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="https://rolling-store-img.netlify.app/img/Internacionales/bayern.jpg"
-                      alt="Camiseta Bayern"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Bayern Múnich 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Manchester United</td>
-                <td>$40000</td>
-                <td>Europa</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="https://rolling-store-img.netlify.app/img/Internacionales/manchester.jpg"
-                      alt="Camiseta Manchester"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Manchester United 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tbody-internacionales"></tbody>
           </table>
-        </div> -->
+        </div>
 
         <!--Tabla niños-->
         <!-- <div class="table-responsive">
@@ -662,7 +558,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h2 class="modal-title fs-5" id="administrarProductoLabel">
-                Ingrese Producto
+                Ingrese Producto Nacional
               </h2>
               <button
                 type="button"
@@ -764,8 +660,11 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h2 class="modal-title fs-5" id="administrarProductoInternacionalesLabel">
-                Ingrese Producto
+              <h2
+                class="modal-title fs-5"
+                id="administrarProductoInternacionalesLabel"
+              >
+                Ingrese Producto Internacional
               </h2>
               <button
                 type="button"
@@ -775,12 +674,14 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form id="formProducto">
+              <form id="formProductoInternacionales">
                 <div class="mb-3">
-                  <label for="nombre" class="form-label">Nombre</label>
+                  <label for="nombreInternacionales" class="form-label"
+                    >Nombre</label
+                  >
                   <input
                     type="text"
-                    id="nombre"
+                    id="nombreInternacionales"
                     class="form-control"
                     placeholder="Camiseta xxxx..."
                     required
@@ -789,10 +690,12 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="precio" class="form-label">Precio</label>
+                  <label for="precioInternacionales" class="form-label"
+                    >Precio</label
+                  >
                   <input
                     type="number"
-                    id="precio"
+                    id="precioInternacionales"
                     class="form-control"
                     placeholder="$"
                     required
@@ -801,10 +704,12 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="imagen" class="form-label">Imagen</label>
+                  <label for="imagenInternacionales" class="form-label"
+                    >Imagen</label
+                  >
                   <input
                     type="text"
-                    id="imagen"
+                    id="imagenInternacionales"
                     class="form-control"
                     placeholder="URL"
                     required
@@ -813,12 +718,12 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="descripcion" class="form-label"
+                  <label for="descripcionInternacionales" class="form-label"
                     >Descripción</label
                   >
                   <input
                     type="text"
-                    id="descripcion"
+                    id="descripcionInternacionales"
                     class="form-control"
                     placeholder="Breve Descripción del Producto (60 caracteres)"
                     required
@@ -827,10 +732,12 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="stock" class="form-label">Stock</label>
+                  <label for="stockInternacionales" class="form-label"
+                    >Stock</label
+                  >
                   <input
                     type="number"
-                    id="stock"
+                    id="stockInternacionales"
                     class="form-control"
                     placeholder="10"
                     required
