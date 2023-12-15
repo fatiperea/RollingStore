@@ -158,12 +158,13 @@ window.borrarProducto = (idProducto) => {
   tablaNacionales.removeChild(tablaNacionales.children[posicionProducto]);
   recargarPagina();
 };
+
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
 ) => {
-  const tablaNacionales = document.querySelector("#tbody-internacionales");
-  tablaNacionales.innerHTML += `<tr>
+  const tablaInternacionales = document.querySelector("#tbody-internacionales");
+  tablaInternacionales.innerHTML += `<tr>
   <th scope="row">${nroFilaInternacionales}</th>
   <td class="text-uppercase">${productoInternacionales.nombre}</td>
   <td>$${productoInternacionales.precio}</td>
@@ -183,11 +184,23 @@ const crearFilaInternacionales = (
     <button class="btn btn-info mt-1 btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info mt-3 btnBorrar">
+    <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProductoInternacionales('${productoInternacionales.id}')">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
 </tr>`;
+};
+
+window.borrarProductoInternacionales = (idProductoInternacionales) => {
+  const posicionProducto = listaProductosInternacionales.findIndex(
+    (itemProductoInternacionales) =>
+      itemProductoInternacionales.id === idProductoInternacionales
+  );
+  listaProductosInternacionales.splice(posicionProducto, 1);
+  guardaLocalStorageInternacionales();
+  const tablaInternacionales = document.querySelector("#tbody-internacionales");
+  tablaInternacionales.removeChild(tablaInternacionales.children[posicionProducto]);
+  recargarPagina();
 };
 
 const cargaInicial = () => {
