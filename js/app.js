@@ -37,7 +37,7 @@ const crearProducto = (e) => {
     undefined,
     nombre.value,
     precio.value,
-   /*  categoria.value, */
+    /*  categoria.value, */
     img.value,
     descripcion.value,
     stock.value
@@ -46,18 +46,28 @@ const crearProducto = (e) => {
   console.log("prod ", producto);
   listaProductos.push(producto);
   console.log("lista prod ", listaProductos);
-  formProducto.reset();
   guardaLocalStorage();
   //llenarFila(producto, listaProducto.length);
 
-  //modalIngresoProducto.hide();
+  crearFila(producto, listaProductos.length - 1);
+
+  modalIngresoProducto.hide();
+  recargarPagina();
 };
 
+const recargarPagina = () => {
+  location.reload();
+};
+
+const limpiarFormulario = () => {
+  formProducto.reset();
+};
 function guardaLocalStorage() {
   localStorage.setItem("listaProduKey", JSON.stringify(listaProductos));
 }
 
 const mostrarModalNacionales = () => {
+  limpiarFormulario();
   modalIngresoProducto.show();
   //formProducto.reset();
 };
@@ -93,7 +103,9 @@ const crearFila = (producto, nroFila) => {
 
 const cargaInicial = () => {
   if (listaProductos.length > 0) {
-    listaProductos.map((itemProducto, posicionArray) => crearFila(itemProducto, posicionArray +1));
+    listaProductos.map((itemProducto, posicionArray) =>
+      crearFila(itemProducto, posicionArray + 1)
+    );
   }
 };
 
