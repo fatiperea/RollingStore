@@ -218,8 +218,8 @@ main {
   border: 2px solid #eee80d;
 }
 
-#btnEditar,
-#btnBorrar {
+.btnEditar,
+.btnBorrar {
   color: #474747;
   border: 2px outset #edefec;
   font-weight: bold;

@@ -138,16 +138,26 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info mt-1" id="btnEditar">
+    <button class="btn btn-info mt-1 btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info mt-3" id="btnBorrar">
+    <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProducto('${producto.id}')">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
 </tr>`;
 };
 
+window.borrarProducto = (idProducto) => {
+  const posicionProducto = listaProductos.findIndex(
+    (itemProducto) => itemProducto.id === idProducto
+  );
+  listaProductos.splice(posicionProducto, 1);
+  guardaLocalStorage();
+  const tablaNacionales = document.querySelector("#tbody-naciolaes");
+  tablaNacionales.removeChild(tablaNacionales.children[posicionProducto]);
+  recargarPagina();
+};
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
@@ -170,10 +180,10 @@ const crearFilaInternacionales = (
   </td>
   <td>${productoInternacionales.stock}</td>
   <td>
-    <button class="btn btn-info mt-1" id="btnEditar">
+    <button class="btn btn-info mt-1 btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info mt-3" id="btnBorrar">
+    <button class="btn btn-info mt-3 btnBorrar">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
