@@ -7,11 +7,10 @@ export default class Producto {
   descripcion;
   stock;
 
-  constructor(id, nombre, precio, categoria, img, descripcion, stock = 10) {
+  constructor(id, nombre, precio, img, descripcion, stock) {
     this.#id = id;
     this.nombre = nombre;
     this.precio = precio;
-    this.categoria = categoria;
     this.img = img;
     this.descripcion = descripcion;
     this.stock = stock;
@@ -27,9 +26,7 @@ export default class Producto {
   get precio() {
     return this.precio;
   }
-  get categoria() {
-    return this.categoria;
-  }
+
   get img() {
     return this.img;
   }
@@ -52,10 +49,6 @@ export default class Producto {
     this.precio = precio;
   }
 
-  set categoria(categoria) {
-    this.categoria = categoria;
-  }
-
   set img(img) {
     this.img = img;
   }
@@ -73,7 +66,6 @@ export default class Producto {
       id: this.id,
       nombre: this.nombre,
       precio: this.precio,
-      categoria: this.categoria,
       img: this.img,
       descripcion: this.descripcion,
       stock: this.stock,
