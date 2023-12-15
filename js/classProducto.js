@@ -7,7 +7,14 @@ export default class Producto {
   descripcion;
   stock;
 
-  constructor(id, nombre, precio, img, descripcion, stock) {
+  constructor(
+    id = crypto.randomUUID(),
+    nombre,
+    precio,
+    img,
+    descripcion,
+    stock
+  ) {
     this.#id = id;
     this.nombre = nombre;
     this.precio = precio;
