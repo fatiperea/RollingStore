@@ -120,7 +120,7 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>
     <div id="contenedorImg">
-      ${producto.img}
+    <img src="${producto.img}" class="imgTablaTamaño">
     </div>
   </td>
   <td>
@@ -128,10 +128,10 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info" id="btnEditar">
+    <button class="btn btn-info mt-1" id="btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info" id="btnBorrar">
+    <button class="btn btn-info mt-3" id="btnBorrar">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
@@ -152,7 +152,7 @@ const crearFilaInternacionales = (
   </td>
   <td>
     <div id="contenedorImg">
-      ${productoInternacionales.img}
+    <img src="${productoInternacionales.img}" class="imgTablaTamaño">
     </div>
   </td>
   <td>
@@ -160,10 +160,10 @@ const crearFilaInternacionales = (
   </td>
   <td>${productoInternacionales.stock}</td>
   <td>
-    <button class="btn btn-info" id="btnEditar">
+    <button class="btn btn-info mt-1" id="btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info" id="btnBorrar">
+    <button class="btn btn-info mt-3" id="btnBorrar">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
