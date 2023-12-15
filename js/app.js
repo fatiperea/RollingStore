@@ -53,9 +53,8 @@ const crearProducto = (e) => {
 
   listaProductos.push(producto);
   guardaLocalStorage();
-  crearFilaNacionales(producto, listaProductos.length - 1);
+  crearFilaNacionales(producto, listaProductos.length);
   modalIngresoProducto.hide();
-  recargarPagina();
 };
 
 const crearProductoInternacional = (e) => {
@@ -74,10 +73,8 @@ const crearProductoInternacional = (e) => {
   guardaLocalStorageInternacionales();
   crearFilaInternacionales(
     productoInternacionales,
-    listaProductosInternacionales - 1
-  );
+    listaProductosInternacionales);
   modalIngresoIternacionales.hide();
-  recargarPagina();
 };
 
 const recargarPagina = () => {
