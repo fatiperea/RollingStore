@@ -73,7 +73,7 @@ const crearProductoInternacional = (e) => {
   guardaLocalStorageInternacionales();
   crearFilaInternacionales(
     productoInternacionales,
-    listaProductosInternacionales);
+    listaProductosInternacionales.length);
   modalIngresoIternacionales.hide();
 };
 
