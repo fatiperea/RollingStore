@@ -71,6 +71,7 @@ export default class Producto {
   toJSON() {
     return {
       id: this.id,
+      nombre: this.nombre,
       precio: this.precio,
       categoria: this.categoria,
       img: this.img,

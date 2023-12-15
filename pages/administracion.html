@@ -218,14 +218,12 @@
             <thead class="align-middle">
               <tr>
                 <th scope="col">
-                  Código <br />
-                  Único
+                  #
                 </th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th>
                 <th scope="col">
                   Categoría: <br />
-                  Nacional
                 </th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Descripción</th>
@@ -233,39 +231,9 @@
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Campeón Mundial 10</td>
-                <td>$149000</td>
-                <td>
-                  Selección Argentina - <br />
-                  Qatar 2022
-                </td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="https://rolling-store-img.netlify.app/img/Nacionales/seleccion/mundial.jpg"
-                      alt="Camiseta Messi mundial"
-                    /><!--../img/nacionales/seleccion/mundial.jpg-->
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 10, <br />
-                  3 estrellas, Mundial 2022,<br />
-                  Lionel Messi
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
+            <tbody id="tbody-naciolaes">
+              
+            <!--   <tr>
                 <th scope="row">2</th>
                 <td>Campeón Copa América 10</td>
                 <td>$75000</td>
@@ -436,13 +404,13 @@
                     <i class="bi bi-trash3-fill"></i>
                   </button>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
 
         <!--Tabla internacionales-->
-        <div class="table-responsive">
+        <!-- <div class="table-responsive">
           <table
             class="table table-success table-striped table-hover"
             id="tablaInternacionales"
@@ -564,10 +532,10 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
 
         <!--Tabla niños-->
-        <div class="table-responsive">
+        <!-- <div class="table-responsive">
           <table
             class="table table-success table-striped table-hover"
             id="tablaNiños"
@@ -693,9 +661,10 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
       </section>
-      <!--Modal-->
+
+      <!--Modal Nacionales-->
       <div
         class="modal fade"
         id="administrarProducto"
@@ -738,11 +707,11 @@
                     class="form-control"
                     placeholder="$"
                     required
-                    minlength="4"
-                    maxlength="6"
+                    min="1000"
+                    max="100000"
                   />
                 </div>
-                <div class="mb-3">
+               <!--  <div class="mb-3">
                   <label for="" class="form-label">Categoría</label>
                   <input
                     type="text"
@@ -753,7 +722,7 @@
                     minlength="5"
                     maxlength="13"
                   />
-                </div>
+                </div> -->
                 <div class="mb-3">
                   <label for="imagen" class="form-label">Imagen</label>
                   <input
@@ -788,8 +757,8 @@
                     class="form-control"
                     placeholder="10"
                     required
-                    minlength="1"
-                    maxlength="4"
+                    min="1"
+                    max="100"
                   />
                 </div>
                 <button class="btn btn-primary" type="submit">Agregar</button>
