@@ -247,6 +247,7 @@ const actualizarDatos = () => {
 
   recargarPagina();
 };
+
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
