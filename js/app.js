@@ -163,7 +163,7 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info mt-1 btnEditarNacional" onclick="mostrarModalEditar('${producto.id}')">
+    <button class="btn btn-info mt-1 btnEditar" onclick="mostrarModalEditar('${producto.id}')">
       <i class="bi bi-pen-fill"></i>
     </button>
     <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProducto('${producto.id}')">
@@ -247,6 +247,7 @@ const actualizarDatos = () => {
 
   recargarPagina();
 };
+
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
@@ -360,27 +361,23 @@ window.mostrarModalEditarInternacional = (idProductoInternacionales) => {
 
   modalIngresoIternacionales.show();
 };
+
 const actualizarDatosInternacionales = () => {
   const posicionProductoBuscadoInter = listaProductosInternacionales.findIndex(
     (itemProductoInternacionales) =>
       itemProductoInternacionales.id === idProdInter
   );
 
-  listaProductosInternacionales[
-    posicionProductoBuscadoInter
-  ].nombreInternacional = nombreInternacional.value;
-  listaProductosInternacionales[
-    posicionProductoBuscadoInter
-  ].precioInternacional = precioInternacional.value;
-  listaProductosInternacionales[
-    posicionProductoBuscadoInter
-  ].imagenInternacionales = imagenInternacionales.value;
-  listaProductosInternacionales[
-    posicionProductoBuscadoInter
-  ].descripcionInternacionales = descripcionInternacionales.value;
-  listaProductosInternacionales[
-    posicionProductoBuscadoInter
-  ].stockInternacionales = stockInternacionales.value;
+  listaProductosInternacionales[posicionProductoBuscadoInter].nombre =
+    nombreInternacional.value;
+  listaProductosInternacionales[posicionProductoBuscadoInter].precio =
+    precioInternacional.value;
+  listaProductosInternacionales[posicionProductoBuscadoInter].img =
+    imagenInternacionales.value; // Corregir la propiedad img
+  listaProductosInternacionales[posicionProductoBuscadoInter].descripcion =
+    descripcionInternacionales.value;
+  listaProductosInternacionales[posicionProductoBuscadoInter].stock =
+    stockInternacionales.value;
   guardaLocalStorageInternacionales();
   //borrar fila
   const tablaProductos = document.querySelector("#tbody-internacionales");
