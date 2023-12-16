@@ -38,24 +38,22 @@
               <img src="../img/logo.png" width="200" alt="logo prueba" />
             </div>
             <h2 class="text-center py-5">Bienvenido</h2>
-            <form action="#">
+            <form action="" id="formLog">
               <div class="mb-4">
-                <label for="text" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="user"" />
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="user"/>
               </div>
               <div class="mb-4">
-                <label for="email" class="form-label">Correo Electronico</label>
+                <label class="form-label">Correo Electronico</label>
                 <input type="email" class="form-control" id="email" />
               </div>
               <div class="mb-4">
-                <label for="password" class="form-label">Contraseña</label>
+                <label class="form-label">Contraseña</label>
                 <input type="password" class="form-control" id="pass" />
               </div>
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary">
-                  Iniciar sesión
-                </button>
+                <input type="button" class="btn btn-primary" value="Iniciar sesión" id="initBtn" onclick="log()">
               </div>
               <div class="my-3">
                 <span>No tienes cuenta? <a href="#">Registrate</a></span
@@ -114,6 +112,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- script del TEAM -->
-    <script src="./js/app.js"></script>
+    <!-- <script src="./js/app.js"></script> -->
+    <script src="../js/login.js"></script>
   </body>
 </html>
