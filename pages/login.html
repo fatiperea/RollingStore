@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <!-- Metadatos principales -->
     <meta charset="UTF-8" />
@@ -21,55 +21,43 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
-
-    <!-- Título prinicipal y favicon -->
-    <link rel="shortcut icon" href="../img/icono-pestaña.png" />
-    <title>Login</title>
+    <title>Document</title>
   </head>
-
   <body>
     <div class="container w-75 mt-3">
       <div class="row align-items-lg-stretch">
-        <div class="col bg-white p-5">
+        
+        <div class="col bg-light-subtle border border-light-subtle shadow-sm p-5 my-5 ">
           <div>
             <div class="text-end">
-              <img src="../img/logo.png" width="200" alt="logo prueba" />
+              <img src="../img/logo.png" width="250" alt="logo" />
             </div>
-            <h2 class="text-center py-5">Admin sesión</h2>
-            <form action="#">
-              <div class="mb-4">
-                <label for="nombre" class="form-label">Usuario</label>
-                <input
-                  id="nombre"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ingrese su usuario"
-                  minlength="2"
-                  maxlength="20"
-                  required
-                />
+            <h2 class="text-center py-3">Bienvenido</h2>
+            <form action="" id="formLog">
+              <div class="mb-4 w-75 mx-auto">
+                <label class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" id="user" autocomplete="off" required/>
+              </div>
+              <div class="mb-4 w-75 mx-auto">
+                <label class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" id="email" required/>
+              </div>
+              <div class="mb-4 w-75 mx-auto">
+                <label class="form-label text-start">Contraseña</label>
+                <input type="password" class="form-control" id="pass" required/>
               </div>
 
-              <div class="mb-4">
-                <label for="password" class="form-label">Contraseña</label>
-                <input
-                  id="password"
-                  type="password"
-                  class="form-control"
-                  placeholder="Ingrese su contraseña"
-                  minlength="2"
-                  maxlength="20"
-                  required
-                />
+              <div class="text-center">
+                <input type="button" class="btn btn-primary w-50" value="Iniciar sesión" id="initBtn" onclick="log()">
               </div>
-
-              <div class="d-grid">
-                <button type="submit" class="btn btn-primary">
-                  Iniciar sesión
-                </button>
-              </div>
+              
             </form>
+
           </div>
         </div>
       </div>
@@ -88,6 +76,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- script del TEAM -->
-    <script src="./js/app.js"></script>
+    <!-- <script src="./js/app.js"></script> -->
+    <script src="../js/login.js"></script>
   </body>
 </html>
