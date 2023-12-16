@@ -53,9 +53,14 @@ const crearProducto = (e) => {
 
   listaProductos.push(producto);
   guardaLocalStorage();
-  crearFilaNacionales(producto, listaProductos.length - 1);
+  crearFilaNacionales(producto, listaProductos.length);
   modalIngresoProducto.hide();
-  recargarPagina();
+  // ventana del sweet alert
+  Swal.fire({
+    title: "Buen trabajo!",
+    text: `Agregaste una nueva camiseta de ${producto.nombre.toUpperCase()}`,
+    icon: "success",
+  });
 };
 
 const crearProductoInternacional = (e) => {
@@ -74,10 +79,15 @@ const crearProductoInternacional = (e) => {
   guardaLocalStorageInternacionales();
   crearFilaInternacionales(
     productoInternacionales,
-    listaProductosInternacionales - 1
+    listaProductosInternacionales.length
   );
   modalIngresoIternacionales.hide();
-  recargarPagina();
+  //ventana de swwt alert
+  Swal.fire({
+    title: "Buen trabajo!",
+    text: `Agregaste una nueva camiseta de ${productoInternacionales.nombre.toUpperCase()}`,
+    icon: "success",
+  });
 };
 
 const recargarPagina = () => {
@@ -128,22 +138,48 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info mt-1" id="btnEditar">
+    <button class="btn btn-info mt-1 btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info mt-3" id="btnBorrar">
+    <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProducto('${producto.id}')">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
 </tr>`;
 };
 
+window.borrarProducto = (idProducto) => {
+  //ventana alert
+  Swal.fire({
+    title: " ¿Borrar Casaca?",
+    text: "No podrás revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Borrar!",
+    cancelButtonText: "Conservar Casaca",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //logica
+      const posicionProducto = listaProductos.findIndex(
+        (itemProducto) => itemProducto.id === idProducto
+      );
+      listaProductos.splice(posicionProducto, 1);
+      guardaLocalStorage();
+      const tablaNacionales = document.querySelector("#tbody-naciolaes");
+      tablaNacionales.removeChild(tablaNacionales.children[posicionProducto]);
+      recargarPagina();
+    }
+  });
+};
+
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
 ) => {
-  const tablaNacionales = document.querySelector("#tbody-internacionales");
-  tablaNacionales.innerHTML += `<tr>
+  const tablaInternacionales = document.querySelector("#tbody-internacionales");
+  tablaInternacionales.innerHTML += `<tr>
   <th scope="row">${nroFilaInternacionales}</th>
   <td class="text-uppercase">${productoInternacionales.nombre}</td>
   <td>$${productoInternacionales.precio}</td>
@@ -160,14 +196,45 @@ const crearFilaInternacionales = (
   </td>
   <td>${productoInternacionales.stock}</td>
   <td>
-    <button class="btn btn-info mt-1" id="btnEditar">
+    <button class="btn btn-info mt-1 btnEditar">
       <i class="bi bi-pen-fill"></i>
     </button>
-    <button class="btn btn-info mt-3" id="btnBorrar">
+    <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProductoInternacionales('${productoInternacionales.id}')">
       <i class="bi bi-trash3-fill"></i>
     </button>
   </td>
 </tr>`;
+};
+
+window.borrarProductoInternacionales = (idProductoInternacionales) => {
+  //ventana alert
+  Swal.fire({
+    title: " ¿Borrar Casaca?",
+    text: "No podrás revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Borrar!",
+    cancelButtonText: "Conservar Casaca",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      //logica del borrado
+      const posicionProducto = listaProductosInternacionales.findIndex(
+        (itemProductoInternacionales) =>
+          itemProductoInternacionales.id === idProductoInternacionales
+      );
+      listaProductosInternacionales.splice(posicionProducto, 1);
+      guardaLocalStorageInternacionales();
+      const tablaInternacionales = document.querySelector(
+        "#tbody-internacionales"
+      );
+      tablaInternacionales.removeChild(
+        tablaInternacionales.children[posicionProducto]
+      );
+      recargarPagina();
+    }
+  });
 };
 
 const cargaInicial = () => {
