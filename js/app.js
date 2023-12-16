@@ -80,7 +80,7 @@ const crearProducto = () => {
   );
 
   listaProductos.push(producto);
-  
+
   guardaLocalStorage();
   crearFilaNacionales(producto, listaProductos.length);
   modalIngresoProducto.hide();
@@ -111,7 +111,7 @@ const crearProductoInternacional = (e) => {
   );
 
   listaProductosInternacionales.push(productoInternacionales);
-  console.log(listaProductosInternacionales[0].nombreInternacional)
+  console.log(listaProductosInternacionales[0].nombreInternacional);
   guardaLocalStorageInternacionales();
   crearFilaInternacionales(
     productoInternacionales,
@@ -143,11 +143,6 @@ const guardaLocalStorageInternacionales = () => {
     JSON.stringify(listaProductosInternacionales)
   );
 };
-/*const mostrarModalNacionales = () => {
-  limpiarFormulario();
-  modalIngresoProducto.show();
-  //formProducto.reset();
-};*/
 
 const crearFilaNacionales = (producto, nroFila) => {
   const tablaNacionales = document.querySelector("#tbody-naciolaes");
@@ -217,8 +212,6 @@ window.mostrarModalEditar = (idProducto) => {
   modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoLabel">Modificar Producto</h2>`;
   const btnEditar = document.querySelector(".btnAgregarNacional");
   btnEditar.innerHTML = "Actualizar";
-
-  console.log(posicionProductoBuscado);
   nombre.value = listaProductos[posicionProductoBuscado].nombre;
   precio.value = listaProductos[posicionProductoBuscado].precio;
 
@@ -232,7 +225,7 @@ const actualizarDatos = () => {
   const posicionProductoBuscado = listaProductos.findIndex(
     (itemProducto) => itemProducto.id === idProdNacional
   );
-  console.log(posicionProductoBuscado);
+
   listaProductos[posicionProductoBuscado].nombre = nombre.value;
   listaProductos[posicionProductoBuscado].precio = precio.value;
 
@@ -340,7 +333,7 @@ const cargaInicialInternacionales = () => {
 window.mostrarModalEditarInternacional = (idProductoInternacionales) => {
   idProdInter = idProductoInternacionales;
   editarInternacional = false;
-  console.log(idProductoInternacionales);
+
   const posicionProductoBuscadoInter = listaProductosInternacionales.findIndex(
     (itemProductoInternacionales) =>
       itemProductoInternacionales.id === idProductoInternacionales
@@ -352,29 +345,18 @@ window.mostrarModalEditarInternacional = (idProductoInternacionales) => {
   const btnEditar = document.querySelector(".btnInternacional");
   btnEditar.innerHTML = "Actualizar";
 
-  console.log(listaProductosInternacionales[2].nombreInternacional)
   nombreInternacional.value =
-    listaProductosInternacionales[
-      posicionProductoBuscadoInter
-    ].nombre;
-  
+    listaProductosInternacionales[posicionProductoBuscadoInter].nombre;
+
   precioInternacional.value =
-    listaProductosInternacionales[
-      posicionProductoBuscadoInter
-    ].precio;
+    listaProductosInternacionales[posicionProductoBuscadoInter].precio;
 
   imagenInternacionales.value =
-    listaProductosInternacionales[
-      posicionProductoBuscadoInter
-    ].imagen;
+    listaProductosInternacionales[posicionProductoBuscadoInter].img;
   descripcionInternacionales.value =
-    listaProductosInternacionales[
-      posicionProductoBuscadoInter
-    ].descripcion;
+    listaProductosInternacionales[posicionProductoBuscadoInter].descripcion;
   stockInternacionales.value =
-    listaProductosInternacionales[
-      posicionProductoBuscadoInter
-    ].stock;
+    listaProductosInternacionales[posicionProductoBuscadoInter].stock;
 
   modalIngresoIternacionales.show();
 };
@@ -383,7 +365,7 @@ const actualizarDatosInternacionales = () => {
     (itemProductoInternacionales) =>
       itemProductoInternacionales.id === idProdInter
   );
-  console.log(posicionProductoBuscadoInter);
+
   listaProductosInternacionales[
     posicionProductoBuscadoInter
   ].nombreInternacional = nombreInternacional.value;
