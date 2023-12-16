@@ -163,7 +163,7 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info mt-1 btnEditarNacional" onclick="mostrarModalEditar('${producto.id}')">
+    <button class="btn btn-info mt-1 btnEditar" onclick="mostrarModalEditar('${producto.id}')">
       <i class="bi bi-pen-fill"></i>
     </button>
     <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProducto('${producto.id}')">
