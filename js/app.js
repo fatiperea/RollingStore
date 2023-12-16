@@ -36,12 +36,40 @@ const stockInternacionales = document.getElementById("stockInternacionales");
 const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
 const listaProductosInternacionales =
   JSON.parse(localStorage.getItem("listaProduKey2")) || [];
-
+let editarNacional = true;
+let idProdNacional = null;
+let editarInternacional = true;
+let idProdInter = null;
 // ---------------------------------- FUNCIONES -------------------------------------
+const mostrarModalNacionales = () => {
+  const modalTitulo = document.querySelector(".modal-header");
+  modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoLabel">Ingrese Producto</h2>`;
+  formProducto.querySelector('button[type="submit"]').textContent = "Agregar";
+  limpiarFormulario();
+  editarNacional = true;
+  modalIngresoProducto.show();
+};
 
-const crearProducto = (e) => {
+const mostrarModalInternacionales = () => {
+  const modalTitulo = document.querySelector(".header-internacional");
+  modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoInternacionalesLabel">Ingrese Producto</h2>`;
+  formProductoInternacionales.querySelector(
+    'button[type="submit"]'
+  ).textContent = "Agregar";
+  formProductoInternacionales.reset();
+  editarInternacional = true;
+  modalIngresoIternacionales.show();
+};
+const guardarProducto = (e) => {
   e.preventDefault();
 
+  if (editarNacional) {
+    crearProducto();
+  } else {
+    actualizarDatos();
+  }
+};
+const crearProducto = () => {
   const producto = new Producto(
     undefined,
     nombre.value,
@@ -52,6 +80,7 @@ const crearProducto = (e) => {
   );
 
   listaProductos.push(producto);
+
   guardaLocalStorage();
   crearFilaNacionales(producto, listaProductos.length);
   modalIngresoProducto.hide();
@@ -62,10 +91,16 @@ const crearProducto = (e) => {
     icon: "success",
   });
 };
-
-const crearProductoInternacional = (e) => {
+const guardarProductoInternacional = (e) => {
   e.preventDefault();
 
+  if (editarInternacional) {
+    crearProductoInternacional();
+  } else {
+    actualizarDatosInternacionales();
+  }
+};
+const crearProductoInternacional = (e) => {
   const productoInternacionales = new Producto(
     undefined,
     nombreInternacional.value,
@@ -76,6 +111,7 @@ const crearProductoInternacional = (e) => {
   );
 
   listaProductosInternacionales.push(productoInternacionales);
+  console.log(listaProductosInternacionales[0].nombreInternacional);
   guardaLocalStorageInternacionales();
   crearFilaInternacionales(
     productoInternacionales,
@@ -107,17 +143,6 @@ const guardaLocalStorageInternacionales = () => {
     JSON.stringify(listaProductosInternacionales)
   );
 };
-const mostrarModalNacionales = () => {
-  limpiarFormulario();
-  modalIngresoProducto.show();
-  //formProducto.reset();
-};
-
-const mostrarModalInternacionales = () => {
-  formProductoInternacionales.reset();
-  modalIngresoIternacionales.show();
-  //formProducto.reset();
-};
 
 const crearFilaNacionales = (producto, nroFila) => {
   const tablaNacionales = document.querySelector("#tbody-naciolaes");
@@ -138,7 +163,7 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info mt-1 btnEditar">
+    <button class="btn btn-info mt-1 btnEditarNacional" onclick="mostrarModalEditar('${producto.id}')">
       <i class="bi bi-pen-fill"></i>
     </button>
     <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProducto('${producto.id}')">
@@ -173,7 +198,55 @@ window.borrarProducto = (idProducto) => {
     }
   });
 };
+//editar
+window.mostrarModalEditar = (idProducto) => {
+  idProdNacional = idProducto;
+  editarNacional = false;
 
+  const posicionProductoBuscado = listaProductos.findIndex(
+    (itemProducto) => itemProducto.id === idProducto
+  );
+
+  const modalTitulo = document.querySelector(".modal-header");
+
+  modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoLabel">Modificar Producto</h2>`;
+  const btnEditar = document.querySelector(".btnAgregarNacional");
+  btnEditar.innerHTML = "Actualizar";
+  nombre.value = listaProductos[posicionProductoBuscado].nombre;
+  precio.value = listaProductos[posicionProductoBuscado].precio;
+
+  img.value = listaProductos[posicionProductoBuscado].img;
+  descripcion.value = listaProductos[posicionProductoBuscado].descripcion;
+  stock.value = listaProductos[posicionProductoBuscado].stock;
+
+  modalIngresoProducto.show();
+};
+const actualizarDatos = () => {
+  const posicionProductoBuscado = listaProductos.findIndex(
+    (itemProducto) => itemProducto.id === idProdNacional
+  );
+
+  listaProductos[posicionProductoBuscado].nombre = nombre.value;
+  listaProductos[posicionProductoBuscado].precio = precio.value;
+
+  listaProductos[posicionProductoBuscado].img = img.value;
+  listaProductos[posicionProductoBuscado].descripcion = descripcion.value;
+  listaProductos[posicionProductoBuscado].stock = stock.value;
+  guardaLocalStorage();
+  //borrar fila
+  const tablaProductos = document.querySelector("#tbody-naciolaes");
+
+  tablaProductos.removeChild(tablaProductos.children[posicionProductoBuscado]);
+  //crear fila;
+  crearFilaNacionales(
+    listaProductos[posicionProductoBuscado],
+    posicionProductoBuscado + 1
+  );
+
+  modalIngresoProducto.hide();
+
+  recargarPagina();
+};
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
@@ -196,7 +269,7 @@ const crearFilaInternacionales = (
   </td>
   <td>${productoInternacionales.stock}</td>
   <td>
-    <button class="btn btn-info mt-1 btnEditar">
+    <button class="btn btn-info mt-1 btnEditar" onclick="mostrarModalEditarInternacional('${productoInternacionales.id}')">
       <i class="bi bi-pen-fill"></i>
     </button>
     <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProductoInternacionales('${productoInternacionales.id}')">
@@ -256,7 +329,75 @@ const cargaInicialInternacionales = () => {
     );
   }
 };
+//editar
+window.mostrarModalEditarInternacional = (idProductoInternacionales) => {
+  idProdInter = idProductoInternacionales;
+  editarInternacional = false;
 
+  const posicionProductoBuscadoInter = listaProductosInternacionales.findIndex(
+    (itemProductoInternacionales) =>
+      itemProductoInternacionales.id === idProductoInternacionales
+  );
+
+  const modalTitulo = document.querySelector(".header-internacional");
+
+  modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoInternacionalesLabel">Modificar Producto</h2>`;
+  const btnEditar = document.querySelector(".btnInternacional");
+  btnEditar.innerHTML = "Actualizar";
+
+  nombreInternacional.value =
+    listaProductosInternacionales[posicionProductoBuscadoInter].nombre;
+
+  precioInternacional.value =
+    listaProductosInternacionales[posicionProductoBuscadoInter].precio;
+
+  imagenInternacionales.value =
+    listaProductosInternacionales[posicionProductoBuscadoInter].img;
+  descripcionInternacionales.value =
+    listaProductosInternacionales[posicionProductoBuscadoInter].descripcion;
+  stockInternacionales.value =
+    listaProductosInternacionales[posicionProductoBuscadoInter].stock;
+
+  modalIngresoIternacionales.show();
+};
+const actualizarDatosInternacionales = () => {
+  const posicionProductoBuscadoInter = listaProductosInternacionales.findIndex(
+    (itemProductoInternacionales) =>
+      itemProductoInternacionales.id === idProdInter
+  );
+
+  listaProductosInternacionales[
+    posicionProductoBuscadoInter
+  ].nombreInternacional = nombreInternacional.value;
+  listaProductosInternacionales[
+    posicionProductoBuscadoInter
+  ].precioInternacional = precioInternacional.value;
+  listaProductosInternacionales[
+    posicionProductoBuscadoInter
+  ].imagenInternacionales = imagenInternacionales.value;
+  listaProductosInternacionales[
+    posicionProductoBuscadoInter
+  ].descripcionInternacionales = descripcionInternacionales.value;
+  listaProductosInternacionales[
+    posicionProductoBuscadoInter
+  ].stockInternacionales = stockInternacionales.value;
+  guardaLocalStorageInternacionales();
+  //borrar fila
+  const tablaProductos = document.querySelector("#tbody-internacionales");
+
+  tablaProductos.removeChild(
+    tablaProductos.children[posicionProductoBuscadoInter]
+  );
+  //crear fila;
+  crearFilaInternacionales(
+    listaProductosInternacionales[posicionProductoBuscadoInter],
+    posicionProductoBuscadoInter + 1
+  );
+
+  modalIngresoIternacionales.hide();
+
+  recargarPagina();
+};
 /* ----------------------------- LÓGICA EXTRA -------------------------------------------- */
 
 btnIngresaProducto.addEventListener("click", mostrarModalNacionales);
@@ -264,10 +405,10 @@ btnIngresaInternacionales.addEventListener(
   "click",
   mostrarModalInternacionales
 );
-formProducto.addEventListener("submit", crearProducto);
+formProducto.addEventListener("submit", guardarProducto);
 formProductoInternacionales.addEventListener(
   "submit",
-  crearProductoInternacional
+  guardarProductoInternacional
 );
 cargaInicial();
 cargaInicialInternacionales();
