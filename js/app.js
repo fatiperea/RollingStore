@@ -36,12 +36,27 @@ const stockInternacionales = document.getElementById("stockInternacionales");
 const listaProductos = JSON.parse(localStorage.getItem("listaProduKey")) || [];
 const listaProductosInternacionales =
   JSON.parse(localStorage.getItem("listaProduKey2")) || [];
-
+let editar = true;
+let idProductoGlobal = null;
 // ---------------------------------- FUNCIONES -------------------------------------
-
-const crearProducto = (e) => {
+const mostrarModalNacionales = () => {
+  const modalTitulo = document.querySelector(".modal-header");
+  modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoLabel">Ingrese Producto</h2>`;
+  formProducto.querySelector('button[type="submit"]').textContent = "Agregar";
+  limpiarFormulario();
+  editar = true;
+  modalIngresoProducto.show();
+};
+const guardarProducto = (e) => {
   e.preventDefault();
 
+  if (editar) {
+    crearProducto();
+  } else {
+    actualizarDatos();
+  }
+};
+const crearProducto = () => {
   const producto = new Producto(
     undefined,
     nombre.value,
@@ -107,11 +122,11 @@ const guardaLocalStorageInternacionales = () => {
     JSON.stringify(listaProductosInternacionales)
   );
 };
-const mostrarModalNacionales = () => {
+/*const mostrarModalNacionales = () => {
   limpiarFormulario();
   modalIngresoProducto.show();
   //formProducto.reset();
-};
+};*/
 
 const mostrarModalInternacionales = () => {
   formProductoInternacionales.reset();
@@ -138,7 +153,7 @@ const crearFilaNacionales = (producto, nroFila) => {
   </td>
   <td>${producto.stock}</td>
   <td>
-    <button class="btn btn-info mt-1 btnEditar">
+    <button class="btn btn-info mt-1 btnEditar" onclick="mostrarModalEditar('${producto.id}')">
       <i class="bi bi-pen-fill"></i>
     </button>
     <button class="btn btn-info mt-3 btnBorrar" onclick="borrarProducto('${producto.id}')">
@@ -173,7 +188,59 @@ window.borrarProducto = (idProducto) => {
     }
   });
 };
+//editar
+window.mostrarModalEditar = (idProducto) => {
+  idProductoGlobal = idProducto;
+  editar = false;
 
+  const posicionProductoBuscado = listaProductos.findIndex(
+    (itemProducto) => itemProducto.id === idProducto
+  );
+
+  const modalTitulo = document.querySelector(".modal-header");
+
+  modalTitulo.innerHTML = `<h2 class="modal-title fs-5" id="administrarProductoLabel">Modificar Producto</h2>`;
+  const btnEditar = document.querySelector(".btnAgregar");
+  btnEditar.innerHTML = "Actualizar";
+
+  console.log(posicionProductoBuscado);
+  nombre.value = listaProductos[posicionProductoBuscado].nombre;
+  precio.value = listaProductos[posicionProductoBuscado].precio;
+
+  img.value = listaProductos[posicionProductoBuscado].img;
+  descripcion.value = listaProductos[posicionProductoBuscado].descripcion;
+  stock.value = listaProductos[posicionProductoBuscado].stock;
+
+  modalIngresoProducto.show();
+
+  console.log(editar);
+};
+const actualizarDatos = () => {
+  const posicionProductoBuscado = listaProductos.findIndex(
+    (itemProducto) => itemProducto.id === idProductoGlobal
+  );
+  console.log(posicionProductoBuscado);
+  listaProductos[posicionProductoBuscado].nombre = nombre.value;
+  listaProductos[posicionProductoBuscado].precio = precio.value;
+  
+  listaProductos[posicionProductoBuscado].img = img.value;
+  listaProductos[posicionProductoBuscado].descripcion = descripcion.value;
+  listaProductos[posicionProductoBuscado].stock = stock.value;
+  guardaLocalStorage();
+  //borrar fila
+  const tablaProductos = document.querySelector("tbody");
+
+  tablaProductos.removeChild(tablaProductos.children[posicionProductoBuscado]);
+  //crear fila;
+  crearFilaNacionales(
+    listaProductos[posicionProductoBuscado],
+    posicionProductoBuscado + 1
+  );
+
+  modalIngresoProducto.hide();
+
+  recargarPagina();
+};
 const crearFilaInternacionales = (
   productoInternacionales,
   nroFilaInternacionales
@@ -264,7 +331,7 @@ btnIngresaInternacionales.addEventListener(
   "click",
   mostrarModalInternacionales
 );
-formProducto.addEventListener("submit", crearProducto);
+formProducto.addEventListener("submit", guardarProducto);
 formProductoInternacionales.addEventListener(
   "submit",
   crearProductoInternacional
