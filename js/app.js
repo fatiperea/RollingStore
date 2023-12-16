@@ -352,29 +352,29 @@ window.mostrarModalEditarInternacional = (idProductoInternacionales) => {
   const btnEditar = document.querySelector(".btnInternacional");
   btnEditar.innerHTML = "Actualizar";
 
-  
+  console.log(listaProductosInternacionales[2].nombreInternacional)
   nombreInternacional.value =
     listaProductosInternacionales[
       posicionProductoBuscadoInter
-    ].nombreInternacional;
-  //nombre.value = listaProductos[posicionProductoBuscado].nombre;
+    ].nombre;
+  
   precioInternacional.value =
     listaProductosInternacionales[
       posicionProductoBuscadoInter
-    ].precioInternacional;
+    ].precio;
 
   imagenInternacionales.value =
     listaProductosInternacionales[
       posicionProductoBuscadoInter
-    ].imagenInternacionales;
+    ].imagen;
   descripcionInternacionales.value =
     listaProductosInternacionales[
       posicionProductoBuscadoInter
-    ].descripcionInternacionales;
+    ].descripcion;
   stockInternacionales.value =
     listaProductosInternacionales[
       posicionProductoBuscadoInter
-    ].stockInternacionales;
+    ].stock;
 
   modalIngresoIternacionales.show();
 };
