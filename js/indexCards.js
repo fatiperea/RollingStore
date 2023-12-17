@@ -26,7 +26,7 @@ const crearCardNacional = (producto) => {
               <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
               ${producto.nombre.toUpperCase()}
               </h4>
-              <a href="./pages/detalleProducto.html" class="btn btn-primary">Ver detalles</a>
+              <button class="btn btn-info mt-1" onclick="verDetalleProductoNacional('${producto.id}')">Ver Detalle</button>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const crearCardsInternacionales = (productoInt) => {
               <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
               ${productoInt.nombre.toUpperCase()}
               </h4>
-              <a href="./pages/detalleProducto.html" class="btn btn-primary">Ver detalles</a>
+              <button class="btn btn-info mt-1" onclick="verDetalleProductoInternacional('${productoInt.id}')">Ver Detalle</button>
             </div>
           </div>
         </div>
@@ -111,7 +111,20 @@ const crearCardsDesdeListaInternacional = () => {
     contenedorCardsInternacionales.appendChild(mensajeSinProducto);
   }
 };
-
+//detalle producto nacional
+window.verDetalleProductoNacional = (idProducto) => {
+  console.log(window.location);
+  window.location.href =
+  window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
+  console.log(idProducto)
+};
+//detalle producto internacional
+window.verDetalleProductoInternacional = (idProdInter) => {
+  console.log(window.location);
+  window.location.href =
+  window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
+  console.log(idProdInter)
+};
 /* ------------- LÓGICA EXTRA -------------- */
 crearCardsDesdeLista();
 crearCardsDesdeListaInternacional();
