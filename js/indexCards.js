@@ -113,17 +113,13 @@ const crearCardsDesdeListaInternacional = () => {
 };
 //detalle producto nacional
 window.verDetalleProductoNacional = (idProducto) => {
-  console.log(window.location);
   window.location.href =
   window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
-  console.log(idProducto)
 };
 //detalle producto internacional
 window.verDetalleProductoInternacional = (idProdInter) => {
-  console.log(window.location);
   window.location.href =
   window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
-  console.log(idProdInter)
 };
 /* ------------- LÓGICA EXTRA -------------- */
 crearCardsDesdeLista();

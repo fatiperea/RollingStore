@@ -1,14 +1,9 @@
 const parametroURL = new URLSearchParams(window.location.search);
-
 const idProducto = parametroURL.get("id");
-
 const productoNuevo = JSON.parse(localStorage.getItem("listaProduKey"));
-console.log(productoNuevo);
-
 const productoBuscado = productoNuevo.find(
   (itemProducto) => itemProducto.id === idProducto
 );
-
 const mainDetalleProducto = document.querySelector("#detallesNacionales");
 mainDetalleProducto.innerHTML += ` 
 <article class="container pt-4">
