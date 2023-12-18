@@ -8,7 +8,7 @@ function cargaInicialCarrito() {
   carrito.forEach((producto, index) => {
     const nuevaFila = `
       <tr>
-        <th scope="row">${index + 1}</th>
+        <th scope="row">${producto.id.splice(0, 5)}</th>
         <td>${producto.nombre.toUpperCase()}</td>
         <td>$${producto.precio}</td>
         <td>
