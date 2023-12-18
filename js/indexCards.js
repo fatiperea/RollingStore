@@ -13,6 +13,8 @@ const formBuscarProducto = document.querySelector("form");
 const listaNacionales = JSON.parse(localStorage.getItem("listaProduKey"));
 const listaInternacionales = JSON.parse(localStorage.getItem("listaProduKey2"));
 
+const listaTotal = listaNacionales.concat(listaInternacionales);
+
 /* -----------------FUNCIONES --------------------- */
 /* para las nacionales */
 
@@ -135,63 +137,75 @@ window.verDetalleProductoInternacional = (idProdInter) => {
     window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
 };
 
+window.verDetalleProducto = (idProd) => {
+  console.log(idProd);
+  console.log(listaTotal.id);
+  
+   window.location.href =
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProd;
+};
+
 //filtrar
 
 const buscarProducto = (e) => {
   e.preventDefault();
   const buscado = document.getElementById("inputBuscar").value.toUpperCase();
-  //console.log(buscado);
+  console.log(buscado);
 
-  if (listaNacionales.length || listaInternacionales.length > 0) {
-    for (let i,j = 0; i < listaNacionales.length,j<listaInternacionales.length; i++,j++) {
-      if (listaNacionales[i].nombre.toUpperCase() === buscado || listaInternacionales[j].nombre.toUpperCase()===buscado) {
-        
+  if (listaTotal.length > 0) {
+    for (let i = 0; i < listaTotal.length; i++) {
+      if (listaTotal[i].nombre.toUpperCase() === buscado) {
         const modalMostrarProducto = new bootstrap.Modal(
           document.getElementById("productoBuscado")
         );
+        const contenedorBuscado = document.getElementById("contenedorBuscado");
 
-          const contenedorBuscado=document.getElementById("contenedorBuscado")
-          if(li)
-          {}
-        contenedorBuscado.innerHTML+= `<div class="modal-header">
-        <h2 class="modal-title fs-5" id="buscarProductoLabel">
-          Buscaste: ${listaNacionales[i].nombre.toUpperCase()}
-        </h2>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <h3></h3>
-        <img src="${listaNacionales[i].img}" alt="${listaNacionales[i].nombre}" />
-        <h4>Precio: <b>$${listaNacionales[i].precio}</b></h4>
-        <button class="btn btn-primary onclick="verDetalleProductoNacional('${listaNacionales[i].id
-        }')" type="">
-          Ver Detalle
-        </button>
-      </div>`;
+        contenedorBuscado.innerHTML += `<div class="modal-header">
+              <h3 class="modal-title fs-5" id="buscarProductoLabel">
+                Buscaste: ${listaTotal[i].nombre.toUpperCase()}
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img src="${listaTotal[i].img}" alt="${listaTotal[i].nombre}" />
+              <p>Precio: <b>$${listaTotal[i].precio}</b></p>
+              <div class="modal-footer">
+
+              <button class="btn btn-primary" onclick="verDetalleProducto('${
+                listaTotal[i].id
+              }')">
+                Ver Detalle
+              </button>
+              </div>
+            </div>`;
 
         modalMostrarProducto.show();
+        formBuscarProducto.reset();
+      } else if (listaTotal.length === 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Ups!",
+          text: "Lo sentimos, por ahora momento no contamos con ese producto",
+        });
       }
     }
-  }else if (listaNacionales.length===0 && listaInternacionales.length=== 0)
-  {
+  } else if (listaTotal.length === 0) {
     Swal.fire({
       icon: "error",
       title: "Ups!",
-      text: "Lo sentimos, en este momento no contamos con ese contenido",
-      //footer: '<a href="#">Why do I have this issue?</a>'
+      text: "Lo sentimos, por ahora no contamos con ese producto",
     });
-    
   }
 };
-
-formBuscarProducto.addEventListener("submit", buscarProducto);
 
 /* ------------- LÓGICA EXTRA -------------- */
 
 crearCardsDesdeLista();
 crearCardsDesdeListaInternacional();
+
+formBuscarProducto.addEventListener("submit", buscarProducto);

@@ -158,9 +158,12 @@ main {
 .brilloImagenesSeccionPrincipal:hover img {
   transform: scale(1.1) rotate(1deg);
 }
-#contenedorBuscado .modal-header .modal-body{
+#contenedorBuscado .modal-header .modal-body .modal-footer{
   width: 70%;
 } 
+#contenedorBuscado p{
+  font-size: x-large;
+}
 #contenedorBuscado img{
   width: 100%;
   object-fit: cover;
