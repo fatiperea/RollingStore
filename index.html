@@ -136,10 +136,13 @@
                   placeholder="Buscar"
                   id="inputBuscar"
                   aria-describedby="busqueda"
+                  required
+                  minlength="4"
+                  maxlength="30"
                 />
-                <span class="input-group-text rounded-end" id="btnBuscar"
+                <button class="input-group-text rounded-end" type="submit" id="btnBuscar"
                   ><i class="bi bi-search"></i
-                ></span>
+                ></button>
                 <a href="./pages/login.html" class="pt-2"> 
                   <i
                     class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
@@ -428,6 +431,43 @@
           </div>
         </article>
       </section>
+
+      <div
+        class="modal fade"
+        id="productoBuscado"
+        tabindex="-1"
+        aria-labelledby="productoBuscadoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="buscarProductoLabel">
+               Buscaste: 
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h3></h3>
+              <img src="" alt="">
+              <p>Precio: </p>
+                <button
+                  class="btn btn-primary btnAgregarNacional"
+                  type="submit"
+                >
+                  Ver Detalle
+                </button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <footer class="text-center text-lg-start foot">

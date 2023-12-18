@@ -1,15 +1,19 @@
 /*------------------ VARIABLES GLOBALES ------------- */
+
 const contenedorCardsNacionales = document.getElementById(
   "contenedorCardsNacionales"
 );
+
 const contenedorCardsInternacionales = document.getElementById(
   "contenedorCardsInternacionales"
 );
+
 const listaNacionales = JSON.parse(localStorage.getItem("listaProduKey"));
 const listaInternacionales = JSON.parse(localStorage.getItem("listaProduKey2"));
 
 /* -----------------FUNCIONES --------------------- */
 /* para las nacionales */
+
 const crearCardNacional = (producto) => {
   contenedorCardsNacionales.innerHTML += `
         <div class="col-sm-6 col-md-4 col-lg-3 mb-3 text-center h-100">
@@ -26,12 +30,15 @@ const crearCardNacional = (producto) => {
               <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
               ${producto.nombre.toUpperCase()}
               </h4>
-              <button class="btn btn-info mt-1" onclick="verDetalleProductoNacional('${producto.id}')">Ver Detalle</button>
+              <button class="btn btn-info mt-1" onclick="verDetalleProductoNacional('${
+                producto.id
+              }')">Ver Detalle</button>
             </div>
           </div>
         </div>
       `;
 };
+
 const crearCardsDesdeLista = () => {
   if (listaNacionales && listaNacionales.length > 0) {
     listaNacionales.forEach((producto) => {
@@ -77,7 +84,9 @@ const crearCardsInternacionales = (productoInt) => {
               <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
               ${productoInt.nombre.toUpperCase()}
               </h4>
-              <button class="btn btn-info mt-1" onclick="verDetalleProductoInternacional('${productoInt.id}')">Ver Detalle</button>
+              <button class="btn btn-info mt-1" onclick="verDetalleProductoInternacional('${
+                productoInt.id
+              }')">Ver Detalle</button>
             </div>
           </div>
         </div>
@@ -111,16 +120,48 @@ const crearCardsDesdeListaInternacional = () => {
     contenedorCardsInternacionales.appendChild(mensajeSinProducto);
   }
 };
+
 //detalle producto nacional
 window.verDetalleProductoNacional = (idProducto) => {
   window.location.href =
-  window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
 };
+
 //detalle producto internacional
 window.verDetalleProductoInternacional = (idProdInter) => {
   window.location.href =
-  window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
 };
+
+//filtrar
+
+const formBuscarProducto = document.querySelector("form");
+//console.log(formBuscarProducto);
+
+const buscarProducto = (e) => {
+  e.preventDefault();
+  const buscado = document.getElementById("inputBuscar").value.toUpperCase();
+  console.log(buscado);
+
+  if (listaNacionales.length > 0) 
+  {
+    for (let i = 0; i < listaNacionales.length; i++)
+     {
+      if (listaNacionales[i].nombre.toUpperCase() === buscado) {
+        console.log(listaNacionales[i]);
+        const modalMostrarProducto = new bootstrap.Modal(
+          document.getElementById("productoBuscado")
+        );
+
+        modalMostrarProducto.show();
+      } //else alert("CAMISETA INEXISTENTE");
+    }
+  } //else if (listaNacionales.length === 0) {alert("TABLA VACIA");}
+}
+
+formBuscarProducto.addEventListener("submit", buscarProducto);
+
 /* ------------- LÓGICA EXTRA -------------- */
+
 crearCardsDesdeLista();
 crearCardsDesdeListaInternacional();
