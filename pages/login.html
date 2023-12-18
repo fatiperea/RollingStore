@@ -125,10 +125,7 @@
               </li>
             </ul>
 
-            <form
-              class="d-flex"
-              role="search"
-            >
+            <form class="d-flex" role="search">
               <div class="input-group">
                 <input
                   type="text"
@@ -140,16 +137,18 @@
                 <span class="input-group-text rounded-end" id="btnBuscar"
                   ><i class="bi bi-search"></i
                 ></span>
-                <a href="" class="pt-2"> 
+                <a href="" class="pt-2">
                   <i
                     class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3 opacity-50"
                     style="font-size: x-large; color: #ffffff"
                   ></i>
                   <a href="../pages/carritoDeCompras.html" class="pt-2">
-
-                    <i class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
-                    style="font-size: x-large; color: #ffffff"></i>
+                    <i
+                      class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
+                      style="font-size: x-large; color: #ffffff"
+                    ></i>
                   </a>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -159,8 +158,9 @@
     </header>
     <main class="container w-75 mt-3">
       <div class="row align-items-lg-stretch">
-        
-        <div class="col bg-light-subtle border border-light-subtle shadow-sm p-5 my-5 ">
+        <div
+          class="col bg-light-subtle border border-light-subtle shadow-sm p-5 my-5"
+        >
           <div>
             <div class="text-end">
               <img src="../img/logo.png" width="250" alt="logo" />
@@ -169,23 +169,38 @@
             <form action="" id="formLog">
               <div class="mb-4 w-75 mx-auto">
                 <label class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" id="user" autocomplete="off" required/>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="user"
+                  autocomplete="off"
+                  required
+                />
               </div>
               <div class="mb-4 w-75 mx-auto">
                 <label class="form-label">Correo Electronico</label>
-                <input type="email" class="form-control" id="email" required/>
+                <input type="email" class="form-control" id="email" required />
               </div>
               <div class="mb-4 w-75 mx-auto">
                 <label class="form-label text-start">Contraseña</label>
-                <input type="password" class="form-control" id="pass" required/>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pass"
+                  required
+                />
               </div>
 
               <div class="text-center">
-                <input type="button" class="btn btn-primary w-50" value="Iniciar sesión" id="initBtn" onclick="log()">
+                <input
+                  type="button"
+                  class="btn btn-primary w-50"
+                  value="Iniciar sesión"
+                  id="initBtn"
+                  onclick="log()"
+                />
               </div>
-              
             </form>
-
           </div>
         </div>
       </div>
