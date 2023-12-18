@@ -395,6 +395,7 @@ const actualizarDatosInternacionales = () => {
 
   recargarPagina();
 };
+
 /* ----------------------------- LÓGICA EXTRA -------------------------------------------- */
 
 btnIngresaProducto.addEventListener("click", mostrarModalNacionales);
