@@ -176,45 +176,17 @@
               </th>
               <th scope="col">Nombre</th>
               <th scope="col">Precio</th>
-              <th scope="col">
-                Categoría: <br />
-                Nacional
-              </th>
               <th scope="col">Imagen</th>
               <th scope="col">Quitar del Carrito</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Campeón Mundial 10</td>
-              <td>$149000</td>
-              <td>
-                Selección Argentina - <br />
-                Qatar 2022
-              </td>
-              <td>
-                <div id="contenedorImgCarrito">
-                  <img
-                    src="../img/nacionales/seleccion/mundial.jpg"
-                    alt="Camiseta Messi mundial"
-                    class="img-fluid"
-                  />
-                </div>
-              </td>
-
-              <td>
-                <button class="btn" id="btnBorrarDelCarrito">
-                  <i class="bi bi-trash3-fill"></i>
-                </button>
-              </td>
-            </tr>
+          <tbody id="tbodyCarrito">
           </tbody>
         </table>
       </div>
       <a
         class="btn tx-parrafo w-100 my-3 my-md-5 btnFinalizarCompra"
-        href="#"
+        href="../pages/error404.html"
         role="button"
         >Finalizar Compra</a
       >
@@ -367,6 +339,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- script del TEAM -->
+    <script src="../js/carrito.js"></script>
     <script src="../js/app.js" type="module"></script>
   </body>
 </html>
