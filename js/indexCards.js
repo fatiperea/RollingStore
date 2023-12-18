@@ -99,7 +99,7 @@ const crearCardsDesdeListaInternacional = () => {
 
     mensajeSinProducto.innerHTML = `
       <img
-        src="./img/fondos/sinproductos.jpg"
+        src="./img/fondos/sinproductos3.jpg"
         alt="No hay productos cargados"
         class="img-fluid imgSinProductos brilloImagenesSeccionPrincipal"
       />
