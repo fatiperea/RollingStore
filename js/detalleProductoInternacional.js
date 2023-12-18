@@ -30,7 +30,7 @@ mainDetalleProductoInter.innerHTML += ` <section>
       <h5 class="tituloDetallesProd tx-Gris">${productoBuscadoInter.nombre.toUpperCase()}</h5>
 
       <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${
-        productoBuscadoInter.codigo
+        productoBuscadoInter.id.slice(0 ,5)
       }</p>
       <p class="precioDetalles fw-bold tx-parrafo">Precio: $${
         productoBuscadoInter.precio
