@@ -116,10 +116,14 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.cardTitulo {
+  min-height: 60px;
+}
+
 /* Nuevo estilo para el botón "Ver detalles" */
 .btn-ver-detalles {
   margin-top: 10px;
-  transition: filter 0.3s; /* Agrega una transición para el efecto hover */
+  transition: filter 0.3s; 
 }
 
 /* Estilo de hover para la card y el botón */
@@ -149,6 +153,7 @@ main {
 .card:hover h4 {
   color: #000000;
 }
+
 
 /* zoom en imagenes */
 .brilloImagenesSeccionPrincipal img {

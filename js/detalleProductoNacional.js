@@ -20,7 +20,7 @@ mainDetalleProducto.innerHTML += `
       <img
         src="${productoBuscado.img}"
         class="img-fluid"
-        alt="fotografía de camiseta deportiva"
+        alt="${productoBuscado.nombre}"
       />
     </div>
 
@@ -28,7 +28,7 @@ mainDetalleProducto.innerHTML += `
       <h5 class="tituloDetallesProd tx-Gris">${productoBuscado.nombre.toUpperCase()}</h5>
 
       <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${
-        productoBuscado.codigo
+        productoBuscado.id.slice(0, 5)
       }</p>
       <p class="precioDetalles fw-bold tx-parrafo">Precio: $${
         productoBuscado.precio
