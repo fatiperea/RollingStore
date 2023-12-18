@@ -41,7 +41,7 @@ mainDetalleProductoInter.innerHTML += ` <section>
       <!-- Agregar producto al carrito -->
 
       <div
-        class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito"
+        class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito btnAgregarCarritoInter"
       >
         <a href="../pages/carritoDeCompras.html" class="linkAgregarCarrito"
           ><i class="bi bi-cart-fill"> </i>Agregar al carrito</a
@@ -101,4 +101,20 @@ mainDetalleProductoInter.innerHTML += ` <section>
 </div>
 </article>`;
 
+const btnAgregarCarritoInter = document.querySelector(".btnAgregarCarritoInter");
 
+function agregarAlCarritoInter(producto) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const productoExistente = carrito.find(item => item.id === producto.id);
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  window.location.href = "../pages/carritoDeCompras.html";
+}
+
+btnAgregarCarritoInter.addEventListener("click", function () {
+  agregarAlCarritoInter(productoBuscadoInter);
+});

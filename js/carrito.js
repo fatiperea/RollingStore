@@ -32,9 +32,9 @@ function cargaInicialCarrito() {
 }
 
 /* ---------------- LÓGICA EXTRA ---------------------- */
-tablaCarrito.addEventListener("click", function (event) {
-  if (event.target.classList.contains("btnBorrarDelCarrito")) {
-    const index = event.target.getAttribute("data-index");
+tablaCarrito.addEventListener("click", function (borrar) {
+  if (borrar.target.classList.contains("btnBorrarDelCarrito")) {
+    const index = borrar.target.getAttribute("data-index");
     carrito.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
     cargaInicialCarrito();
