@@ -7,7 +7,7 @@ function cargaInicialCarrito() {
   tablaCarrito.innerHTML = "";
   carrito.forEach((producto, index) => {
     const nuevaFila = `
-      <tr>
+      <tr">
         <th scope="row">${producto.id.slice(0, 5)}</th>
         <td>${producto.nombre.toUpperCase()}</td>
         <td>$${producto.precio}</td>
@@ -20,7 +20,7 @@ function cargaInicialCarrito() {
             />
           </div>
         </td>
-        <td class="text-center">
+        <td>
           <button class="btn btnBorrarDelCarrito btn btn-info mt-3 btnBorrar"" data-index="${index}">
             <i class="bi bi-trash3-fill"></i>
           </button>
