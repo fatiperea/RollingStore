@@ -37,7 +37,7 @@ tablaCarrito.addEventListener("click", function (event) {
     const index = event.target.getAttribute("data-index");
     carrito.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    cargaInicialCarritoCarrito();
+    cargaInicialCarrito();
   }
 });
 cargaInicialCarrito();

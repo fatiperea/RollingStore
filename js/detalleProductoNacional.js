@@ -96,36 +96,20 @@ mainDetalleProducto.innerHTML += `
 </div>
 </article>`;
 
-// Obtener el botón "Agregar al carrito"
 const btnAgregarCarrito = document.querySelector(".btnAgregarCarrito");
 
-
-// Función para agregar un producto al carrito
 function agregarAlCarrito(producto) {
-  // Obtener el carrito actual del localStorage
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-  // Verificar si el producto ya está en el carrito
   const productoExistente = carrito.find(item => item.id === producto.id);
-
   if (productoExistente) {
-    // Si el producto ya está en el carrito, incrementar la cantidad
     productoExistente.cantidad += 1;
   } else {
-    // Si el producto no está en el carrito, agregarlo con cantidad 1
     carrito.push({ ...producto, cantidad: 1 });
   }
-
-  // Guardar el carrito actualizado en el localStorage
   localStorage.setItem("carrito", JSON.stringify(carrito));
-
-  // Opcional: Puedes redirigir al usuario a la página del carrito
   window.location.href = "../pages/carritoDeCompras.html";
 }
-
-
-// Asignar un manejador de eventos al botón
 btnAgregarCarrito.addEventListener("click", function () {
-  // Llamar a la función agregarAlCarrito con el producto buscado
+
   agregarAlCarrito(productoBuscado);
 });

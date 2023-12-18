@@ -2,8 +2,9 @@ const parametroURLInter = new URLSearchParams(window.location.search);
 const idProductoInternacional = parametroURL.get("id");
 const productoNuevoInter = JSON.parse(localStorage.getItem("listaProduKey2"));
 const productoBuscadoInter = productoNuevoInter.find(
-  (itemProductoInter) => itemProductoInter.id === idProducto
+  (itemProductoInter) => itemProductoInter.id === idProductoInternacional
 );
+
 const mainDetalleProductoInter = document.querySelector(
   "#detallesInternacionales"
 );
@@ -29,9 +30,10 @@ mainDetalleProductoInter.innerHTML += ` <section>
     <div class="col-md-5 textoDetallesProd">
       <h5 class="tituloDetallesProd tx-Gris">${productoBuscadoInter.nombre.toUpperCase()}</h5>
 
-      <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${
-        productoBuscadoInter.id.slice(0 ,5)
-      }</p>
+      <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${productoBuscadoInter.id.slice(
+        0,
+        5
+      )}</p>
       <p class="precioDetalles fw-bold tx-parrafo">Precio: $${
         productoBuscadoInter.precio
       }</p>
@@ -98,3 +100,5 @@ mainDetalleProductoInter.innerHTML += ` <section>
   </div>
 </div>
 </article>`;
+
+
