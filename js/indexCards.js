@@ -143,21 +143,39 @@ const buscarProducto = (e) => {
   const buscado = document.getElementById("inputBuscar").value.toUpperCase();
   console.log(buscado);
 
-  if (listaNacionales.length > 0) 
-  {
-    for (let i = 0; i < listaNacionales.length; i++)
-     {
+  if (listaNacionales.length > 0) {
+    for (let i = 0; i < listaNacionales.length; i++) {
       if (listaNacionales[i].nombre.toUpperCase() === buscado) {
         console.log(listaNacionales[i]);
         const modalMostrarProducto = new bootstrap.Modal(
           document.getElementById("productoBuscado")
         );
+          const contenedorBuscado=document.getElementById("contenedorBuscado")
+        contenedorBuscado.innerHTML+= `<div class="modal-header">
+        <h2 class="modal-title fs-5" id="buscarProductoLabel">
+          Buscaste: ${listaNacionales[i].nombre.toUpperCase()}
+        </h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h3></h3>
+        <img src="${listaNacionales[i].img}" alt="${listaNacionales[i].nombre}" />
+        <p>Precio: $${listaNacionales[i].precio}</p>
+        <button class="btn btn-primary btnAgregarNacional" type="submit">
+          Ver Detalle
+        </button>
+      </div>`;
 
         modalMostrarProducto.show();
-      } //else alert("CAMISETA INEXISTENTE");
+      }
     }
-  } //else if (listaNacionales.length === 0) {alert("TABLA VACIA");}
-}
+  }
+};
 
 formBuscarProducto.addEventListener("submit", buscarProducto);
 

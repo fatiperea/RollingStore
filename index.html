@@ -125,10 +125,7 @@
               </li>
             </ul>
 
-            <form
-              class="d-flex"
-              role="search"
-            >
+            <form class="d-flex" role="search">
               <div class="input-group">
                 <input
                   type="text"
@@ -140,19 +137,25 @@
                   minlength="4"
                   maxlength="30"
                 />
-                <button class="input-group-text rounded-end" type="submit" id="btnBuscar"
-                  ><i class="bi bi-search"></i
-                ></button>
-                <a href="./pages/login.html" class="pt-2"> 
+                <button
+                  class="input-group-text rounded-end"
+                  type="submit"
+                  id="btnBuscar"
+                >
+                  <i class="bi bi-search"></i>
+                </button>
+                <a href="./pages/login.html" class="pt-2">
                   <i
                     class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
                     style="font-size: x-large; color: #ffffff"
+                  ></i
+                ></a>
+                <a href="./pages/carritoDeCompras.html" class="pt-2">
+                  <i
+                    class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
+                    style="font-size: x-large; color: #ffffff"
                   ></i>
-                  <a href="./pages/carritoDeCompras.html" class="pt-2">
-
-                    <i class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
-                    style="font-size: x-large; color: #ffffff"></i>
-                  </a>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -295,8 +298,7 @@
           <div
             class="row justify-content-center"
             id="contenedorCardsNacionales"
-          >
-          </div>
+          ></div>
         </article>
 
         <!-- Categoría internacionales -->
@@ -323,10 +325,9 @@
           </div>
           <!-- cards internacionales -->
           <div
-          class="row justify-content-center"
-          id="contenedorCardsInternacionales"
-        >
-        </div>
+            class="row justify-content-center"
+            id="contenedorCardsInternacionales"
+          ></div>
         </article>
 
         <!-- Categoría Kids -->
@@ -440,10 +441,11 @@
         aria-hidden="true"
       >
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content" id="contenedorBuscado">
+            <!--
             <div class="modal-header">
               <h2 class="modal-title fs-5" id="buscarProductoLabel">
-               Buscaste: 
+                Buscaste:
               </h2>
               <button
                 type="button"
@@ -454,20 +456,15 @@
             </div>
             <div class="modal-body">
               <h3></h3>
-              <img src="" alt="">
-              <p>Precio: </p>
-                <button
-                  class="btn btn-primary btnAgregarNacional"
-                  type="submit"
-                >
-                  Ver Detalle
-                </button>
-              
-            </div>
+              <img src="" alt="" />
+              <p>Precio:</p>
+              <button class="btn btn-primary btnAgregarNacional" type="submit">
+                Ver Detalle
+              </button>
+            </div> -->
           </div>
         </div>
       </div>
-
     </main>
 
     <footer class="text-center text-lg-start foot">
