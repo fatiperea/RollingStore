@@ -154,7 +154,7 @@ const buscarProducto = (e) => {
 
   if (listaTotal.length > 0) {
     for (let i = 0; i < listaTotal.length; i++) {
-      if (listaTotal[i].nombre.toUpperCase() === buscado) {
+      if (listaTotal[i].nombre.toUpperCase()===buscado) {
         const modalMostrarProducto = new bootstrap.Modal(
           document.getElementById("productoBuscado")
         );
@@ -185,12 +185,13 @@ const buscarProducto = (e) => {
             </div>`;
 
         modalMostrarProducto.show();
-        formBuscarProducto.reset();
-      } else if (listaTotal.length === 0) {
+        //formBuscarProducto.reset();
+      } else if (listaTotal[i].nombre.toUpperCase()!==buscado) 
+      {
         Swal.fire({
           icon: "error",
           title: "Ups!",
-          text: "Lo sentimos, por ahora momento no contamos con ese producto",
+          text: "Lo sentimos, por el momento no contamos con ese producto!",
         });
       }
     }
@@ -200,7 +201,7 @@ const buscarProducto = (e) => {
       title: "Ups!",
       text: "Lo sentimos, por ahora no contamos con ese producto",
     });
-  }
+  }formBuscarProducto.reset();
 };
 
 /* ------------- LÓGICA EXTRA -------------- */
