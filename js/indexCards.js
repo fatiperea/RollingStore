@@ -8,6 +8,8 @@ const contenedorCardsInternacionales = document.getElementById(
   "contenedorCardsInternacionales"
 );
 
+const formBuscarProducto = document.querySelector("form");
+
 const listaNacionales = JSON.parse(localStorage.getItem("listaProduKey"));
 const listaInternacionales = JSON.parse(localStorage.getItem("listaProduKey2"));
 
@@ -135,22 +137,22 @@ window.verDetalleProductoInternacional = (idProdInter) => {
 
 //filtrar
 
-const formBuscarProducto = document.querySelector("form");
-//console.log(formBuscarProducto);
-
 const buscarProducto = (e) => {
   e.preventDefault();
   const buscado = document.getElementById("inputBuscar").value.toUpperCase();
-  console.log(buscado);
+  //console.log(buscado);
 
-  if (listaNacionales.length > 0) {
-    for (let i = 0; i < listaNacionales.length; i++) {
-      if (listaNacionales[i].nombre.toUpperCase() === buscado) {
-        console.log(listaNacionales[i]);
+  if (listaNacionales.length || listaInternacionales.length > 0) {
+    for (let i,j = 0; i < listaNacionales.length,j<listaInternacionales.length; i++,j++) {
+      if (listaNacionales[i].nombre.toUpperCase() === buscado || listaInternacionales[j].nombre.toUpperCase()===buscado) {
+        
         const modalMostrarProducto = new bootstrap.Modal(
           document.getElementById("productoBuscado")
         );
+
           const contenedorBuscado=document.getElementById("contenedorBuscado")
+          if(li)
+          {}
         contenedorBuscado.innerHTML+= `<div class="modal-header">
         <h2 class="modal-title fs-5" id="buscarProductoLabel">
           Buscaste: ${listaNacionales[i].nombre.toUpperCase()}
@@ -165,8 +167,9 @@ const buscarProducto = (e) => {
       <div class="modal-body">
         <h3></h3>
         <img src="${listaNacionales[i].img}" alt="${listaNacionales[i].nombre}" />
-        <p>Precio: $${listaNacionales[i].precio}</p>
-        <button class="btn btn-primary btnAgregarNacional" type="submit">
+        <h4>Precio: <b>$${listaNacionales[i].precio}</b></h4>
+        <button class="btn btn-primary onclick="verDetalleProductoNacional('${listaNacionales[i].id
+        }')" type="">
           Ver Detalle
         </button>
       </div>`;
@@ -174,6 +177,15 @@ const buscarProducto = (e) => {
         modalMostrarProducto.show();
       }
     }
+  }else if (listaNacionales.length===0 && listaInternacionales.length=== 0)
+  {
+    Swal.fire({
+      icon: "error",
+      title: "Ups!",
+      text: "Lo sentimos, en este momento no contamos con ese contenido",
+      //footer: '<a href="#">Why do I have this issue?</a>'
+    });
+    
   }
 };
 
