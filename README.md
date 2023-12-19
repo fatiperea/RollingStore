@@ -20,7 +20,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 1. Entra a https://github.com/ lee las intrucciones para clonar repositorios
 1. Abre tu terminal de pc - sugerencia - https://git-scm.com/
-1. Link para clonar https://github.com/Nachocode87/rollingStore 
+1. Link para clonar https://github.com/penguinEm/RollingStore 
 
 ## Autores ✒️
 
