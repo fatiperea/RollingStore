@@ -140,8 +140,8 @@ window.verDetalleProductoInternacional = (idProdInter) => {
 window.verDetalleProducto = (idProd) => {
   console.log(idProd);
   console.log(listaTotal.id);
-  
-   window.location.href =
+
+  window.location.href =
     window.location.origin + "/pages/detalleProducto.html?id=" + idProd;
 };
 
@@ -150,50 +150,66 @@ window.verDetalleProducto = (idProd) => {
 const buscarProducto = (e) => {
   e.preventDefault();
   const buscado = document.getElementById("inputBuscar").value.toUpperCase();
-  console.log(buscado);
-
+  //console.log(buscado);
+  let encontrado = false; let productoEncontrado;
   if (listaTotal.length > 0) {
+    /*console.log("1ra rama");
+    console.log("item", listaTotal[i].nombre);
+    console.log("item mayu", listaTotal[i].nombre.toUpperCase());
+    console.log("buscado", buscado);*/
     for (let i = 0; i < listaTotal.length; i++) {
-      if (listaTotal[i].nombre.toUpperCase()===buscado) {
-        const modalMostrarProducto = new bootstrap.Modal(
-          document.getElementById("productoBuscado")
-        );
-        const contenedorBuscado = document.getElementById("contenedorBuscado");
-
-        contenedorBuscado.innerHTML += `<div class="modal-header">
-              <h3 class="modal-title fs-5" id="buscarProductoLabel">
-                Buscaste: ${listaTotal[i].nombre.toUpperCase()}
-              </h3>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <img src="${listaTotal[i].img}" alt="${listaTotal[i].nombre}" />
-              <p>Precio: <b>$${listaTotal[i].precio}</b></p>
-              <div class="modal-footer">
-
-              <button class="btn btn-primary" onclick="verDetalleProducto('${
-                listaTotal[i].id
-              }')">
-                Ver Detalle
-              </button>
-              </div>
-            </div>`;
-
-        modalMostrarProducto.show();
-        //formBuscarProducto.reset();
-      } else if (listaTotal[i].nombre.toUpperCase()!==buscado) 
-      {
-        Swal.fire({
-          icon: "error",
-          title: "Ups!",
-          text: "Lo sentimos, por el momento no contamos con ese producto!",
-        });
+      if (listaTotal[i].nombre.toUpperCase() === buscado) {
+        encontrado = true;
+         productoEncontrado = listaTotal[i];
       }
+    }
+
+    if (encontrado) {
+      const modalMostrarProducto = new bootstrap.Modal(
+        document.getElementById("productoBuscado")
+      );
+      const contenedorBuscado = document.getElementById("contenedorBuscado");
+
+      contenedorBuscado.innerHTML += `<div class="modal-header">
+            <h3 class="modal-title fs-5" id="buscarProductoLabel">
+              Buscaste: ${productoEncontrado.nombre.toUpperCase()}
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img src="${productoEncontrado.img}" alt="${
+        productoEncontrado.nombre
+      }" />
+            <p>Precio: <b>$${productoEncontrado.precio}</b></p>
+            <div class="modal-footer">
+
+            <button class="btn btn-primary" onclick="verDetalleProducto('${
+              productoEncontrado.id
+            }')">
+              Ver Detalle
+            </button>
+            </div>
+          </div>`;
+
+      modalMostrarProducto.show();
+    }
+
+    //else if (listaTotal[i].nombre.toUpperCase()!==buscado)
+    else {
+      /*console.log("2da rama");
+      console.log("item", listaTotal[i].nombre);
+      console.log("item mayu", listaTotal[i].nombre.toUpperCase());
+      console.log("buscado", buscado);*/
+      Swal.fire({
+        icon: "error",
+        title: "Ups!",
+        text: "Lo sentimos, por el momento no contamos con ese producto!",
+      });
     }
   } else if (listaTotal.length === 0) {
     Swal.fire({
@@ -201,7 +217,8 @@ const buscarProducto = (e) => {
       title: "Ups!",
       text: "Lo sentimos, por ahora no contamos con ese producto",
     });
-  }formBuscarProducto.reset();
+  }
+  formBuscarProducto.reset();
 };
 
 /* ------------- LÓGICA EXTRA -------------- */
