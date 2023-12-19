@@ -125,10 +125,7 @@
               </li>
             </ul>
 
-            <form
-              class="d-flex"
-              role="search"
-            >
+            <form class="d-flex" role="search">
               <div class="input-group">
                 <input
                   type="text"
@@ -136,20 +133,29 @@
                   placeholder="Buscar"
                   id="inputBuscar"
                   aria-describedby="busqueda"
+                  required
+                  minlength="4"
+                  maxlength="30"
                 />
-                <span class="input-group-text rounded-end" id="btnBuscar"
-                  ><i class="bi bi-search"></i
-                ></span>
-                <a href="./pages/login.html" class="pt-2"> 
+                <button
+                  class="input-group-text rounded-end"
+                  type="submit"
+                  id="btnBuscar"
+                >
+                  <i class="bi bi-search"></i>
+                </button>
+                <a href="./pages/login.html" class="pt-2">
                   <i
                     class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
                     style="font-size: x-large; color: #ffffff"
+                  ></i
+                ></a>
+                <a href="./pages/carritoDeCompras.html" class="pt-2">
+                  <i
+                    class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
+                    style="font-size: x-large; color: #ffffff"
                   ></i>
-                  <a href="./pages/carritoDeCompras.html" class="pt-2">
-
-                    <i class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
-                    style="font-size: x-large; color: #ffffff"></i>
-                  </a>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -259,16 +265,28 @@
             <img
               src="img/publicidad/publi1.png"
               alt="Probaste las mejores milas de tucuman?"
+              class="altoImagenPublicidad"
             />
-            <img src="img/publicidad/publi1.png" alt="Publicidad 1 " />
-            <img src="img/publicidad/publi2v2.png" alt="Publicidad 2" />
+            <img
+              src="img/publicidad/publi1.png"
+              alt="Publicidad coca-cola"
+              class="altoImagenPublicidad"
+            />
+            <img
+              src="img/publicidad/publi2v2.png"
+              alt="Publicidad coca-cola"
+              class="altoImagenPublicidad"
+            />
           </div>
         </div>
         <div class="d-md-none">
-          <img src="./img/publicidad/publi2v2.png" class="img-fluid" alt="" />
+          <img
+            src="./img/publicidad/publi2v2.png"
+            class="img-fluid altoImagenPublicidad"
+            alt="Publicidad coca-cola"
+          />
         </div>
       </section>
-
       <!-- Secciones por Categorías -->
       <section class="container rounded-1 border my-3">
         <!-- Categoría nacionales -->
@@ -292,8 +310,7 @@
           <div
             class="row justify-content-center"
             id="contenedorCardsNacionales"
-          >
-          </div>
+          ></div>
         </article>
 
         <!-- Categoría internacionales -->
@@ -320,10 +337,9 @@
           </div>
           <!-- cards internacionales -->
           <div
-          class="row justify-content-center"
-          id="contenedorCardsInternacionales"
-        >
-        </div>
+            class="row justify-content-center"
+            id="contenedorCardsInternacionales"
+          ></div>
         </article>
 
         <!-- Categoría Kids -->
@@ -344,7 +360,7 @@
                 <img
                   class="img-fluid tamañoResponsiveImagenesDeSecciones"
                   src="./img/nacionales/river.jpg"
-                  alt="Libro: Amor y venganza"
+                  alt="Camiseta talla niños"
                 />
                 <h4 class="tx-Gris tx-intermedio fs-6 fw-bold pt-3">
                   $ 21.200
@@ -352,7 +368,9 @@
                 <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
                   RIVER PLATE
                 </h4>
-                <a href="#" class="btn btn-primary">Ver detalles</a>
+                <a href="./pages/error404.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
               </div>
             </div>
           </div>
@@ -362,7 +380,7 @@
                 <img
                   class="img-fluid tamañoResponsiveImagenesDeSecciones"
                   src="./img/nacionales/boca.jpg"
-                  alt="Libro: Amor y venganza"
+                  alt="Camiseta talla niños"
                 />
                 <h4 class="tx-Gris tx-intermedio fs-6 fw-bold pt-3">
                   $ 21.200
@@ -370,7 +388,9 @@
                 <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
                   BOCA JUNIORS
                 </h4>
-                <a href="#" class="btn btn-primary">Ver detalles</a>
+                <a href="./pages/error404.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
               </div>
             </div>
           </div>
@@ -380,13 +400,15 @@
                 <img
                   class="img-fluid tamañoResponsiveImagenesDeSecciones"
                   src="./img/nacionales/racing.jpg"
-                  alt="Libro: Amor y venganza"
+                  alt="Camiseta talla niños"
                 />
                 <h4 class="tx-Gris tx-intermedio fs-6 fw-bold pt-3">
                   $ 21.200
                 </h4>
                 <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">RACING</h4>
-                <a href="#" class="btn btn-primary">Ver detalles</a>
+                <a href="./pages/error404.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
               </div>
             </div>
           </div>
@@ -396,7 +418,7 @@
                 <img
                   class="img-fluid tamañoResponsiveImagenesDeSecciones"
                   src="./img/nacionales/independiente.jpg"
-                  alt="Libro: Amor y venganza"
+                  alt="Camiseta talla niños"
                 />
                 <h4 class="tx-Gris tx-intermedio fs-6 fw-bold pt-3">
                   $ 21.200
@@ -404,7 +426,9 @@
                 <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
                   INDEPENDIENTE
                 </h4>
-                <a href="#" class="btn btn-primary">Ver detalles</a>
+                <a href="./pages/error404.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
               </div>
             </div>
           </div>
@@ -414,7 +438,7 @@
                 <img
                   class="img-fluid tamañoResponsiveImagenesDeSecciones"
                   src="./img/nacionales/seleccion/mundial.jpg"
-                  alt="Libro: Amor y venganza"
+                  alt="Camiseta talla niños"
                 />
                 <h4 class="tx-Gris tx-intermedio fs-6 fw-bold pt-3">
                   $ 21.200
@@ -422,12 +446,26 @@
                 <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
                   ARGENTINA OFICIAL
                 </h4>
-                <a href="#" class="btn btn-primary">Ver detalles</a>
+                <a href="./pages/error404.html" class="btn btn-primary"
+                  >Ver detalles</a
+                >
               </div>
             </div>
           </div>
         </article>
       </section>
+
+      <div
+        class="modal fade"
+        id="productoBuscado"
+        tabindex="-1"
+        aria-labelledby="productoBuscadoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content" id="contenedorBuscado"></div>
+        </div>
+      </div>
     </main>
 
     <footer class="text-center text-lg-start foot">
@@ -577,6 +615,8 @@
       src="https://kit.fontawesome.com/a19956b3b8.js"
       crossorigin="anonymous"
     ></script>
+    <!-- script de sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- script del TEAM -->
     <script src="./js/indexCards.js"></script>
     <script src="./js/app.js" type="module"></script>

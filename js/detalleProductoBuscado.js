@@ -1,19 +1,20 @@
 const parametroURLInter = new URLSearchParams(window.location.search);
-const idProductoInternacional = parametroURL.get("id");
-const productoNuevoInter = JSON.parse(localStorage.getItem("listaProduKey2"));
-const productoBuscadoInter = productoNuevoInter.find(
-  (itemProductoInter) => itemProductoInter.id === idProductoInternacional
-);
+const idProd= parametroURL.get("id");
+const productoNuevo1= JSON.parse(localStorage.getItem("listaProduKey"));
+//const productoNuevo2= JSON.parse(localStorage.getItem("listaProduKey2"));
 
-const mainDetalleProductoInter = document.querySelector(
-  "#detallesInternacionales"
+const productoBuscado = productoNuevo1.find(
+  (itemProducto) => itemProducto.id === idProd
 );
-mainDetalleProductoInter.innerHTML += ` <section>
+const mainDetalle = document.querySelector(
+  "#detalleBuscado"
+);
+mainDetalle.innerHTML += ` <section>
 <article class="container pt-4">
   <h2
     class="my-4 text-start fst-italic tituloPagDetalles tx-Gris tx-titulo"
   >
-    Internacionales
+    
   </h2>
   <hr class="hrDetalles" />
   <!-- Carrousel -->
@@ -21,27 +22,26 @@ mainDetalleProductoInter.innerHTML += ` <section>
   <div class="mt-3 row">
     <div class="col-md-6 mt-md-5">
       <img
-        src="${productoBuscadoInter.img}"
+        src="${productoBuscado.img}"
         class="img-fluid"
         alt="fotografía de camiseta deportiva"
       />
     </div>
 
     <div class="col-md-5 textoDetallesProd">
-      <h5 class="tituloDetallesProd tx-Gris">${productoBuscadoInter.nombre.toUpperCase()}</h5>
+      <h5 class="tituloDetallesProd tx-Gris">${productoBuscado.nombre.toUpperCase()}</h5>
 
-      <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${productoBuscadoInter.id.slice(
-        0,
-        5
-      )}</p>
+      <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${
+        productoBuscado.codigo
+      }</p>
       <p class="precioDetalles fw-bold tx-parrafo">Precio: $${
-        productoBuscadoInter.precio
+        productoBuscado.precio
       }</p>
 
       <!-- Agregar producto al carrito -->
 
       <div
-        class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito btnAgregarCarritoInter"
+        class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito"
       >
         <a href="../pages/carritoDeCompras.html" class="linkAgregarCarrito"
           ><i class="bi bi-cart-fill"> </i>Agregar al carrito</a
@@ -49,7 +49,7 @@ mainDetalleProductoInter.innerHTML += ` <section>
       </div>
 
       <p class="textoPagDetalles tx-parrafo tx-Gris">Stock: ${
-        productoBuscadoInter.stock
+        productoBuscado.stock
       }</p>
       <div class="mt-5">
         <p class="textoPagDetalles tx-parrafo tx-Gris">
@@ -81,11 +81,11 @@ mainDetalleProductoInter.innerHTML += ` <section>
     <ul class="listaDescripcion tx-parrafo">
       <li>
         <span class="fw-bold tx-Gris"
-          >INDUMENTARIA OFICIAL DE JUEGO DE ${productoBuscadoInter.nombre.toUpperCase()}.
+          >INDUMENTARIA OFICIAL DE JUEGO DE ${productoBuscado.nombre.toUpperCase()}.
         </span>
       </li>
       <li>
-        ${productoBuscadoInter.descripcion}
+        ${productoBuscado.descripcion}
       </li>
       <li><span class="fw-bold tx-Gris">Material: </span>Poliéster.</li>
       <li><span class="fw-bold tx-Gris">Manga:</span> Corta</li>
@@ -100,21 +100,3 @@ mainDetalleProductoInter.innerHTML += ` <section>
   </div>
 </div>
 </article>`;
-
-const btnAgregarCarritoInter = document.querySelector(".btnAgregarCarritoInter");
-
-function agregarAlCarritoInter(producto) {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const productoExistente = carrito.find(item => item.id === producto.id);
-  if (productoExistente) {
-    productoExistente.cantidad += 1;
-  } else {
-    carrito.push({ ...producto, cantidad: 1 });
-  }
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  window.location.href = "../pages/carritoDeCompras.html";
-}
-
-btnAgregarCarritoInter.addEventListener("click", function () {
-  agregarAlCarritoInter(productoBuscadoInter);
-});

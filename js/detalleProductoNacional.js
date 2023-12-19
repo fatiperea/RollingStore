@@ -20,7 +20,7 @@ mainDetalleProducto.innerHTML += `
       <img
         src="${productoBuscado.img}"
         class="img-fluid"
-        alt="fotografía de camiseta deportiva"
+        alt="${productoBuscado.nombre}"
       />
     </div>
 
@@ -28,7 +28,7 @@ mainDetalleProducto.innerHTML += `
       <h5 class="tituloDetallesProd tx-Gris">${productoBuscado.nombre.toUpperCase()}</h5>
 
       <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${
-        productoBuscado.codigo
+        productoBuscado.id.slice(0, 5)
       }</p>
       <p class="precioDetalles fw-bold tx-parrafo">Precio: $${
         productoBuscado.precio
@@ -95,3 +95,21 @@ mainDetalleProducto.innerHTML += `
   </div>
 </div>
 </article>`;
+
+const btnAgregarCarrito = document.querySelector(".btnAgregarCarrito");
+
+function agregarAlCarrito(producto) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const productoExistente = carrito.find(item => item.id === producto.id);
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  window.location.href = "../pages/carritoDeCompras.html";
+}
+btnAgregarCarrito.addEventListener("click", function () {
+
+  agregarAlCarrito(productoBuscado);
+});
