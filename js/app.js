@@ -140,7 +140,6 @@ const crearProductoInternacional = () => {
     );
 
     listaProductosInternacionales.push(productoInternacionales);
-    console.log(listaProductosInternacionales[0].nombreInternacional);
     guardaLocalStorageInternacionales();
     crearFilaInternacionales(
       productoInternacionales,

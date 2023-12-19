@@ -138,9 +138,6 @@ window.verDetalleProductoInternacional = (idProdInter) => {
 };
 
 window.verDetalleProducto = (idProd) => {
-  console.log(idProd);
-  console.log(listaTotal.id);
-
   window.location.href =
     window.location.origin + "/pages/detalleProducto.html?id=" + idProd;
 };
