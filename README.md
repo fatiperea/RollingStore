@@ -12,7 +12,7 @@
 
 ## Demo
 
-Agregar link netlify
+- Deply del proyecto https://dev--rollingstore-team4.netlify.app/
 
 ## Comenzando 🚀
 
