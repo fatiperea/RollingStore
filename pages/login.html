@@ -165,10 +165,19 @@
             <div class="text-end">
               <img src="../img/logo.png" width="250" alt="logo" />
             </div>
-            <h2 class="text-center py-3">Bienvenido</h2>
+            <h2 class="text-center py-3" aria-describedby="bienvenido al login ingrese sus datos">Bienvenido</h2>
             <form action="" id="formLog">
               <div class="mb-4 w-75 mx-auto">
                 <label class="form-label">Nombre de usuario</label>
+                <input type="text" class="form-control" id="user" autocomplete="off" placeholder="ingrese usuario" minlength="5" maxlength="15" aria-describedby="nombre de usuario" required/>
+              </div>
+              <div class="mb-4 w-75 mx-auto">
+                <label class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" id="email" placeholder="ingrese su e-mail" minlength="9" aria-describedby="email" required/>
+              </div>
+              <div class="mb-4 w-75 mx-auto">
+                <label class="form-label text-start">Contraseña</label>
+                <input type="password" class="form-control" id="pass" placeholder="minimo 8 caracteres" minlength="8" maxlength="20" aria-describedby="contraseña" required/>
                 <input
                   type="text"
                   class="form-control"
@@ -190,7 +199,6 @@
                   required
                 />
               </div>
-
               <div class="text-center">
                 <input
                   type="button"
@@ -219,7 +227,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- script del TEAM -->
-    <!-- <script src="./js/app.js"></script> -->
     <script src="../js/login.js"></script>
   </body>
 </html>
