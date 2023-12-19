@@ -150,53 +150,49 @@ window.verDetalleProducto = (idProd) => {
 const buscarProducto = (e) => {
   e.preventDefault();
   const buscado = document.getElementById("inputBuscar").value.toUpperCase();
-  
-  let encontrado = false; let productoEncontrado;
+
+  let encontrado = false;
+  let productoEncontrado;
+  let modalContent = "";
+
   if (listaTotal.length > 0) {
-    
     for (let i = 0; i < listaTotal.length; i++) {
       if (listaTotal[i].nombre.toUpperCase() === buscado) {
         encontrado = true;
-         productoEncontrado = listaTotal[i];
+        productoEncontrado = listaTotal[i];
+
+        modalContent = `<div class="modal-header">
+          <h3 class="modal-title fs-5" id="buscarProductoLabel">
+            Buscaste: ${productoEncontrado.nombre.toUpperCase()}
+          </h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <img src="${productoEncontrado.img}" alt="${productoEncontrado.nombre}" />
+          <p>Precio: <b>$${productoEncontrado.precio}</b></p>
+          <div class="modal-footer">
+            <button class="btn btn-primary" onclick="verDetalleProducto('${productoEncontrado.id}')">
+              Ver Detalle
+            </button>
+          </div>
+        </div>`;
       }
     }
+
+    const contenedorBuscado = document.getElementById("contenedorBuscado");
+    contenedorBuscado.innerHTML = modalContent;
 
     if (encontrado) {
       const modalMostrarProducto = new bootstrap.Modal(
         document.getElementById("productoBuscado")
       );
-      const contenedorBuscado = document.getElementById("contenedorBuscado");
-
-      contenedorBuscado.innerHTML += `<div class="modal-header">
-            <h3 class="modal-title fs-5" id="buscarProductoLabel">
-              Buscaste: ${productoEncontrado.nombre.toUpperCase()}
-            </h3>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <img src="${productoEncontrado.img}" alt="${
-        productoEncontrado.nombre
-      }" />
-            <p>Precio: <b>$${productoEncontrado.precio}</b></p>
-            <div class="modal-footer">
-
-            <button class="btn btn-primary" onclick="verDetalleProducto('${
-              productoEncontrado.id
-            }')">
-              Ver Detalle
-            </button>
-            </div>
-          </div>`;
-
       modalMostrarProducto.show();
-    }
-
-    else {
+    } else {
       Swal.fire({
         icon: "error",
         title: "Ups!",
@@ -212,6 +208,7 @@ const buscarProducto = (e) => {
   }
   formBuscarProducto.reset();
 };
+
 
 /* ------------- LÓGICA EXTRA -------------- */
 

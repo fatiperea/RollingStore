@@ -396,6 +396,7 @@ main {
   .tamañoResponsiveImagenesDeSecciones img{
       object-fit: cover;
   }
+  
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -414,6 +415,7 @@ main {
   #contenedorBtn div {
     width: 30%;
   }
+  
 }
 
 @media all and (max-width: 576px) {
@@ -431,4 +433,9 @@ main {
   #inputBuscaProducto {
     width: 100%;
   }
+  .altoImagenPublicidad {
+    height: 60px;
+    object-fit: cover;
+  }
+ 
 }
