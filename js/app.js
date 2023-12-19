@@ -1,6 +1,12 @@
 //----------------------------- IMPORTS ---------------------------------
 
 import Producto from "./classProducto.js";
+import {
+  validarInputDescripcion,
+  validarPrecio,
+  validarInputNombre,
+  validarStock,
+} from "./validaciones.js";
 
 //----------------------------- VARIABLES GLOBALES ----------------------
 
@@ -69,28 +75,44 @@ const guardarProducto = (e) => {
     actualizarDatos();
   }
 };
+
 const crearProducto = () => {
-  const producto = new Producto(
-    undefined,
-    nombre.value,
-    precio.value,
-    img.value,
-    descripcion.value,
-    stock.value
-  );
+  //validaciones js
+  if (
+    validarInputNombre(nombre.value, 3, 20) &&
+    validarInputDescripcion(descripcion.value, 4, 80) &&
+    validarStock(stock.value, 1, 100) &&
+    validarPrecio(precio.value, 1000, 1000000)
+  ) {
+    const producto = new Producto(
+      undefined,
+      nombre.value,
+      precio.value,
+      img.value,
+      descripcion.value,
+      stock.value
+    );
 
-  listaProductos.push(producto);
+    listaProductos.push(producto);
 
-  guardaLocalStorage();
-  crearFilaNacionales(producto, listaProductos.length);
-  modalIngresoProducto.hide();
-  // ventana del sweet alert
-  Swal.fire({
-    title: "Buen trabajo!",
-    text: `Agregaste una nueva camiseta de ${producto.nombre.toUpperCase()}`,
-    icon: "success",
-  });
+    guardaLocalStorage();
+    crearFilaNacionales(producto, listaProductos.length);
+    modalIngresoProducto.hide();
+    // ventana del sweet alert
+    Swal.fire({
+      title: "Buen trabajo!",
+      text: `Agregaste una nueva camiseta de ${producto.nombre.toUpperCase()}`,
+      icon: "success",
+    });
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Hay errores en el formulario",
+    });
+  }
 };
+
 const guardarProductoInternacional = (e) => {
   e.preventDefault();
 
@@ -100,30 +122,44 @@ const guardarProductoInternacional = (e) => {
     actualizarDatosInternacionales();
   }
 };
-const crearProductoInternacional = (e) => {
-  const productoInternacionales = new Producto(
-    undefined,
-    nombreInternacional.value,
-    precioInternacional.value,
-    imagenInternacionales.value,
-    descripcionInternacionales.value,
-    stockInternacionales.value
-  );
+const crearProductoInternacional = () => {
+  //validaciones js
+  if (
+    validarInputNombre(nombreInternacional.value, 3, 20) &&
+    validarInputDescripcion(descripcionInternacionales.value, 4, 80) &&
+    validarStock(stockInternacionales.value, 1, 100) &&
+    validarPrecio(precioInternacional.value, 1000, 1000000)
+  ) {
+    const productoInternacionales = new Producto(
+      undefined,
+      nombreInternacional.value,
+      precioInternacional.value,
+      imagenInternacionales.value,
+      descripcionInternacionales.value,
+      stockInternacionales.value
+    );
 
-  listaProductosInternacionales.push(productoInternacionales);
-  console.log(listaProductosInternacionales[0].nombreInternacional);
-  guardaLocalStorageInternacionales();
-  crearFilaInternacionales(
-    productoInternacionales,
-    listaProductosInternacionales.length
-  );
-  modalIngresoIternacionales.hide();
-  //ventana de swwt alert
-  Swal.fire({
-    title: "Buen trabajo!",
-    text: `Agregaste una nueva camiseta de ${productoInternacionales.nombre.toUpperCase()}`,
-    icon: "success",
-  });
+    listaProductosInternacionales.push(productoInternacionales);
+    console.log(listaProductosInternacionales[0].nombreInternacional);
+    guardaLocalStorageInternacionales();
+    crearFilaInternacionales(
+      productoInternacionales,
+      listaProductosInternacionales.length
+    );
+    modalIngresoIternacionales.hide();
+    //ventana de swwt alert
+    Swal.fire({
+      title: "Buen trabajo!",
+      text: `Agregaste una nueva camiseta de ${productoInternacionales.nombre.toUpperCase()}`,
+      icon: "success",
+    });
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Hay errores en el formulario",
+    });
+  }
 };
 
 const recargarPagina = () => {
