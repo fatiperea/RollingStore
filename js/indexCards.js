@@ -150,13 +150,10 @@ window.verDetalleProducto = (idProd) => {
 const buscarProducto = (e) => {
   e.preventDefault();
   const buscado = document.getElementById("inputBuscar").value.toUpperCase();
-  //console.log(buscado);
+  
   let encontrado = false; let productoEncontrado;
   if (listaTotal.length > 0) {
-    /*console.log("1ra rama");
-    console.log("item", listaTotal[i].nombre);
-    console.log("item mayu", listaTotal[i].nombre.toUpperCase());
-    console.log("buscado", buscado);*/
+    
     for (let i = 0; i < listaTotal.length; i++) {
       if (listaTotal[i].nombre.toUpperCase() === buscado) {
         encontrado = true;
@@ -199,12 +196,7 @@ const buscarProducto = (e) => {
       modalMostrarProducto.show();
     }
 
-    //else if (listaTotal[i].nombre.toUpperCase()!==buscado)
     else {
-      /*console.log("2da rama");
-      console.log("item", listaTotal[i].nombre);
-      console.log("item mayu", listaTotal[i].nombre.toUpperCase());
-      console.log("buscado", buscado);*/
       Swal.fire({
         icon: "error",
         title: "Ups!",
