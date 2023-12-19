@@ -27,9 +27,9 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Título principal y favicon -->
+    <!-- Título prinicipal y favicon -->
     <link rel="shortcut icon" href="../img/icono-pestaña.png" />
-    <title>RollingStore</title>
+    <title>Carrito de Compras</title>
   </head>
   <body>
     <header>
@@ -137,14 +137,14 @@
                 <span class="input-group-text rounded-end" id="btnBuscar"
                   ><i class="bi bi-search"></i
                 ></span>
-                <a href="" class="pt-2">
+                <a href="../pages/login.html" class="pt-2">
                   <i
-                    class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3 opacity-50"
+                    class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
                     style="font-size: x-large; color: #ffffff"
                   ></i>
-                  <a href="../pages/carritoDeCompras.html" class="pt-2">
+                  <a href="" class="pt-2">
                     <i
-                      class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
+                      class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3 opacity-50"
                       style="font-size: x-large; color: #ffffff"
                     ></i>
                   </a>
@@ -156,81 +156,38 @@
         </div>
       </nav>
     </header>
-    <main class="container mt-3">
-      <div class="row align-items-lg-stretch">
-        <div
-          class="col bg-light-subtle border border-light-subtle shadow-sm p-5 my-5"
+    <main class="carritoDeCompras container">
+      <h2
+        class="my-3 text-center fst-italic tituloPagCarrito tx-Gris tx-titulo"
+      >
+        Mi Carrito
+      </h2>
+      <div class="table-responsive text-start">
+        <table
+          class="table table-success table-striped table-hover"
+          id="tablaCarritoDeCompras"
         >
-          <div>
-            <div class="text-end container">
-              <img src="../img/logo.png" width="250" alt="logo" />
-            </div>
-            <h2
-              class="text-center py-3 tx-Intermedio tx-Gris display-4"
-              aria-describedby="bienvenido al login ingrese sus datos"
-            >
-              Bienvenido
-            </h2>
-            <form id="formLog">
-              <div class="mb-4">
-                <label class="form-label tx-parrafo tx-Gris" for="user">Nombre de usuario</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="user"
-                  autocomplete="off"
-                  placeholder="ingrese usuario"
-                  minlength="5"
-                  maxlength="15"
-                  aria-describedby="nombre de usuario"
-                  required
-                />
-              </div>
-              <div class="mb-4">
-                <label class="form-label tx-parrafo tx-Gris" for="email" >Correo Electronico</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="ingrese su e-mail"
-                  minlength="9"
-                  aria-describedby="email"
-                  required
-                />
-              </div>
-              <div class="mb-4">
-                <label class="form-label text-start tx-parrafo tx-Gris" for="pass">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="pass"
-                  placeholder="minimo 8 caracteres"
-                  minlength="8"
-                  maxlength="20"
-                  aria-describedby="contraseña"
-                  required
-                />
-                <input
-                  type="text"
-                  class="form-control"
-                  id="user"
-                  autocomplete="off"
-                  required
-                />
-              </div>
-              <div class="text-center">
-                <input
-                  type="button"
-                  class="btn btn-primary w-50"
-                  value="Iniciar sesión"
-                  id="initBtn"
-                  onclick="log()"
-                />
-              </div>
-            </form>
-          </div>
-        </div>
+          <thead class="align-middle">
+            <tr>
+              <th scope="col">
+                Código <br />
+                Único
+              </th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Quitar del Carrito</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyCarrito"></tbody>
+        </table>
       </div>
+      <a
+        class="btn tx-parrafo w-100 my-3 my-md-5 btnFinalizarCompra"
+        href="../pages/error404.html"
+        role="button"
+        >Finalizar Compra</a
+      >
     </main>
     <footer class="text-center text-lg-start foot">
       <section>
@@ -379,7 +336,10 @@
       src="https://kit.fontawesome.com/a19956b3b8.js"
       crossorigin="anonymous"
     ></script>
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- script del TEAM -->
-    <script src="../js/login.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/app.js" type="module"></script>
   </body>
 </html>

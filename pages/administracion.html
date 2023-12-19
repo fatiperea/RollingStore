@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <!-- Metadatos principales -->
@@ -38,9 +39,9 @@
       >
         <div class="container text-center">
           <div class="col-10 col-md-11 col-lg-4">
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand" href="../index.html"
               ><img
-                class="img-fluid"
+                class="img-fluid navImg"
                 src="../img/logo.png"
                 alt="logo rolling store"
             /></a>
@@ -60,7 +61,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link active dropdown-toggle px-md-3 px-lg-4"
+                  class="nav-link active dropdown-toggle px-md-3"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -69,14 +70,26 @@
                   Nacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Norte</a></li>
-                  <li><a class="dropdown-item" href="#">Buenos Aires</a></li>
-                  <li><a class="dropdown-item" href="#">País</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Norte</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Buenos Aires</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >País</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link active dropdown-toggle px-md-3 px-lg-4"
+                  class="nav-link active dropdown-toggle px-md-3"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -85,15 +98,33 @@
                   Internacional
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Europa</a></li>
-                  <li><a class="dropdown-item" href="#">Sudamérica</a></li>
-                  <li><a class="dropdown-item" href="#">Mundo</a></li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Europa</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Sudamérica</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../pages/error404.html"
+                      >Mundo</a
+                    >
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-disabled="true">Niños</a>
+                <a
+                  class="nav-link active"
+                  aria-disabled="true"
+                  href="../pages/acercaDeNosotros.html"
+                  >Nosotros</a
+                >
               </li>
             </ul>
+
             <form class="d-flex" role="search">
               <div class="input-group">
                 <input
@@ -106,10 +137,18 @@
                 <span class="input-group-text rounded-end" id="btnBuscar"
                   ><i class="bi bi-search"></i
                 ></span>
-                <i
-                  class="bi bi-person-fill mx-4 mx-md-4 mx-lg-3"
-                  style="font-size: x-large; color: #ffffff; padding-top: 5px"
-                ></i>
+                <a href="../pages/login.html" class="pt-2">
+                  <i
+                    class="bi bi-person-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
+                    style="font-size: x-large; color: #ffffff"
+                  ></i>
+                  <a href="../pages/carritoDeCompras.html" class="pt-2">
+                    <i
+                      class="bi bi-cart-fill mx-4 mx-md-4 mx-lg-2 mx-xl-3"
+                      style="font-size: x-large; color: #ffffff"
+                    ></i>
+                  </a>
+                </a>
               </div>
             </form>
             <div class="bg-info row-cols-1"></div>
@@ -118,60 +157,36 @@
       </nav>
     </header>
     <main class="container-fluid">
-      <h2 class="tx-titulo text-center" id="tituloAdmin">Administración de Productos</h2>
+      <h2 class="tx-titulo text-center fst-italic" id="tituloAdmin">
+        Administración de Productos
+      </h2>
 
       <!--Botón y buscador-->
 
-      <div class="row tx-Intermedio my-3" id="contenedorBtn">
+      <div
+        class="row tx-Intermedio my-3 justify-content-center"
+        id="contenedorBtn"
+      >
         <div class="col col-12 col-sm-4 col-lg-4 mb-3">
           <button class="btn btn-outline-light" id="btnIngresaProducto">
-            INGRESA PRODUCTO
+            INGRESAR <br />
+            NACIONALES
           </button>
         </div>
-        <div class="col col-12 col-sm-4 col-lg-4 mb-3 dropdown">
+
+        <div class="col col-12 col-sm-4 col-lg-4 mb-3">
           <button
-            class="btn btn-outline-light dropdown-toggle"
+            class="btn btn-outline-light"
             type="button"
             id="btnElijeTabla"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
           >
-            SELECCIONA TABLA
+            INGRESAR <br />
+            INTERNACIONALES
           </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" href="#tablaNacionales">Nacional</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#tablaInternacionales"
-                >Internacional</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="#tablaNiños">Infantil</a></li>
-          </ul>
-        </div>
-        <div class="col col-12 col-sm-4 col-lg-4">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              id="inputBuscaProducto"
-              type="search"
-              placeholder="BUSCAR PRODUCTO"
-              aria-label="Search"
-            />
-            <button
-              class="btn btn-outline-success"
-              id="btnElijeProducto"
-              type="submit"
-            >
-              <i class="bi bi-search"></i>
-            </button>
-          </form>
         </div>
       </div>
 
       <!--Sección tablas-->
-
       <section class="tx-parrafo">
         <!--Tabla Nacionales-->
         <div class="table-responsive">
@@ -181,224 +196,17 @@
           >
             <thead class="align-middle">
               <tr>
-                <th scope="col">
-                  Código <br />
-                  Único
-                </th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">
-                  Categoría: <br />
-                  Nacional
-                </th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Acciones</th>
+                <th scope="col" class="col-1">#</th>
+                <th scope="col" class="col-2">Nombre</th>
+                <th scope="col" class="col-2">Precio</th>
+                <th scope="col" class="col-2">Categoría</th>
+                <th scope="col" class="col-2">Imagen</th>
+                <th scope="col" class="col-3">Descripción</th>
+                <th scope="col" class="col-1">Stock</th>
+                <th scope="col" class="col-1">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Campeón Mundial 10</td>
-                <td>$149000</td>
-                <td>
-                  Selección Argentina - <br />
-                  Qatar 2022
-                </td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/seleccion/mundial.jpg"
-                      alt="Camiseta Messi mundial"
-                    />
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 10, <br />
-                  3 estrellas, Mundial 2022,<br />
-                  Lionel Messi
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Campeón Copa América 10</td>
-                <td>$75000</td>
-                <td>
-                  Selección Argentina - <br />
-                  Copa América 2021
-                </td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/seleccion/copaamerica.jpg"
-                      alt="Camiseta Messi copa america"
-                    />
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 10, <br />
-                  Copa América 2021,<br />
-                  Lionel Messi
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Campeón Mundial 10 alternativa</td>
-                <td>$129000</td>
-                <td>
-                  Selección Argentina - <br />
-                  Qatar 2022
-                </td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/seleccion/alternativa.jpg"
-                      alt="Camiseta Messi mundial alternativa"
-                    />
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 10, <br />
-                  Mundial 2022,<br />
-                  Lionel Messi, alternativa
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Campeón Copa América 10 alternativa</td>
-                <td>$90000</td>
-                <td>
-                  Selección Argentina - <br />
-                  Copa América 2021
-                </td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/seleccion/alternativa2.jpg"
-                      alt="Camiseta Messi c. america alternativa"
-                    />
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 10, <br />
-                  Copa América 2021,<br />
-                  Lionel Messi, alternativa
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Campeón Mundial 23</td>
-                <td>$70000</td>
-                <td>
-                  Selección Argentina - <br />
-                  Qatar 2022
-                </td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/seleccion/dibu2.jpeg"
-                      alt="Camiseta Dibu mundial"
-                    />
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 23, <br />
-                  Mundial 2022, <br />
-                  Emiliano Martínez
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Boca Jrs. 2023</td>
-                <td>$50000</td>
-                <td>Nacional</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img src="../img/nacionales/boca.jpg" alt="Camiseta Boca" />
-                  </div>
-                </td>
-                <td>Camiseta Boca Jrs. 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>River Plate 2023</td>
-                <td>$50000</td>
-                <td>Nacional</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/river.jpg"
-                      alt="Camiseta River"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta River Plate 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tbody-naciolaes"></tbody>
           </table>
         </div>
 
@@ -410,251 +218,354 @@
           >
             <thead class="align-middle">
               <tr>
-                <th scope="col">
-                  Código <br />
-                  Único
-                </th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">
-                  Categoría: <br />
-                  Internacional
-                </th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Acciones</th>
+                <th scope="col" class="col-1">#</th>
+                <th scope="col" class="col-2">Nombre</th>
+                <th scope="col" class="col-2">Precio</th>
+                <th scope="col" class="col-2">Categoría</th>
+                <th scope="col" class="col-2">Imagen</th>
+                <th scope="col" class="col-3">Descripción</th>
+                <th scope="col" class="col-1">Stock</th>
+                <th scope="col" class="col-1">Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Inter Miami 2022/2023</td>
-                <td>$60000</td>
-                <td>EE UU</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/internacionales/miami.jpg"
-                      alt="Camiseta Inter Miami"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Inter Miami 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Barcelona</td>
-                <td>$40000</td>
-                <td>Europa</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/internacionales/barcelona.jpg"
-                      alt="Camiseta Barcelona"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Barcelona 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Bayern Múnich</td>
-                <td>$40000</td>
-                <td>Europa</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/internacionales/bayern.jpg"
-                      alt="Camiseta Bayern"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Bayern Múnich 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Manchester United</td>
-                <td>$40000</td>
-                <td>Europa</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/internacionales/manchester.jpg"
-                      alt="Camiseta Manchester"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Manchester United 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!--Tabla niños-->
-        <div class="table-responsive">
-          <table
-            class="table table-success table-striped table-hover"
-            id="tablaNiños"
-          >
-            <thead class="align-middle">
-              <tr>
-                <th scope="col">
-                  Código <br />
-                  Único
-                </th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">
-                  Categoría: <br />
-                  Infantil
-                </th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Campeón Mundial 10</td>
-                <td>$130000</td>
-                <td>Selección Argentina</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/seleccion/mundial.jpg"
-                      alt="Camiseta Messi mundial"
-                    />
-                  </div>
-                </td>
-                <td>
-                  Camiseta Argentina N° 10, <br />
-                  3 estrellas, Mundial 2022, Lionel Messi
-                </td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr></tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Inter Miami</td>
-                <td>$40000</td>
-                <td>EE UU</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/internacionales/miami.jpg"
-                      alt="Camiseta Inter Miami"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta Inter Miami 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Boca Jrs. 2023</td>
-                <td>$50000</td>
-                <td>Nacional</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img src="../img/nacionales/boca.jpg" alt="Camiseta Boca" />
-                  </div>
-                </td>
-                <td>Camiseta Boca Jrs. 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>River Plate 2023</td>
-                <td>$50000</td>
-                <td>Nacional</td>
-                <td>
-                  <div id="contenedorImg">
-                    <img
-                      src="../img/nacionales/river.jpg"
-                      alt="Camiseta River"
-                    />
-                  </div>
-                </td>
-                <td>Camiseta River Plate 2022/2023</td>
-                <td>100</td>
-                <td>
-                  <button class="btn btn-info" id="btnEditar">
-                    <i class="bi bi-pen-fill"></i>
-                  </button>
-                  <button class="btn btn-info" id="btnBorrar">
-                    <i class="bi bi-trash3-fill"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="tbody-internacionales"></tbody>
           </table>
         </div>
       </section>
+
+      <!--Modal Nacionales-->
+      <div
+        class="modal fade"
+        id="administrarProducto"
+        tabindex="-1"
+        aria-labelledby="administrarProductoLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-5" id="administrarProductoLabel">
+                Ingrese Producto Nacional
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="formProducto">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    class="form-control"
+                    placeholder="Camiseta xxxx..."
+                    required
+                    minlength="3"
+                    maxlength="20"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="precio" class="form-label">Precio</label>
+                  <input
+                    type="number"
+                    id="precio"
+                    class="form-control"
+                    placeholder="$"
+                    required
+                    min="1000"
+                    max="1000000"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="imagen" class="form-label">Imagen</label>
+                  <input
+                    type="text"
+                    id="imagen"
+                    class="form-control imagen"
+                    placeholder="URL"
+                    required
+                    minlength="3"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="descripcion" class="form-label"
+                    >Descripción</label
+                  >
+                  <input
+                    type="text"
+                    id="descripcion"
+                    class="form-control"
+                    placeholder="Breve Descripción del Producto (60 caracteres)"
+                    required
+                    minlength="4"
+                    maxlength="80"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="stock" class="form-label">Stock</label>
+                  <input
+                    type="number"
+                    id="stock"
+                    class="form-control"
+                    placeholder="0"
+                    required
+                    min="1"
+                    max="100"
+                  />
+                </div>
+                <button
+                  class="btn btn-primary btnAgregarNacional"
+                  type="submit"
+                >
+                  Agregar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal INTERNACIONALES-->
+      <div
+        class="modal fade"
+        id="administrarProductoInternacionales"
+        tabindex="-1"
+        aria-labelledby="administrarProductoInternacionalesLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header header-internacional">
+              <h2
+                class="modal-title fs-5"
+                id="administrarProductoInternacionalesLabel"
+              >
+                Ingrese Producto Internacional
+              </h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="formProductoInternacionales">
+                <div class="mb-3">
+                  <label for="nombreInternacionales" class="form-label"
+                    >Nombre</label
+                  >
+                  <input
+                    type="text"
+                    id="nombreInternacionales"
+                    class="form-control"
+                    placeholder="Camiseta xxxx..."
+                    required
+                    minlength="3"
+                    maxlength="20"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="precioInternacionales" class="form-label"
+                    >Precio</label
+                  >
+                  <input
+                    type="number"
+                    id="precioInternacionales"
+                    class="form-control"
+                    placeholder="$"
+                    required
+                    min="1000"
+                    max="1000000"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="imagenInternacionales" class="form-label"
+                    >Imagen</label
+                  >
+                  <input
+                    type="text"
+                    id="imagenInternacionales"
+                    class="form-control"
+                    placeholder="URL"
+                    required
+                    minlength="3"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionInternacionales" class="form-label"
+                    >Descripción</label
+                  >
+                  <input
+                    type="text"
+                    id="descripcionInternacionales"
+                    class="form-control"
+                    placeholder="Breve Descripción del Producto (60 caracteres)"
+                    required
+                    minlength="4"
+                    maxlength="80"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="stockInternacionales" class="form-label"
+                    >Stock</label
+                  >
+                  <input
+                    type="number"
+                    id="stockInternacionales"
+                    class="form-control"
+                    placeholder="0"
+                    required
+                    min="1"
+                    max="100"
+                  />
+                </div>
+                <button class="btn btn-primary btnInternacional" type="submit">
+                  Agregar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer></footer>
+    <footer class="text-center text-lg-start foot mt-3">
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-auto col-md-12 text-md-center col-lg-3 mx-auto">
+              <a href="../index.html">
+                <img
+                  class="img-fluid"
+                  src="../img/logo.png"
+                  alt="logo rolling store"
+                />
+              </a>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Norte</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Buenos Aires</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >País</a
+                >
+              </p>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Internacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Europa</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Asia</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Sudamérica</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Mundo</a
+                >
+              </p>
+            </div>
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nosotros</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/acercaDeNosotros.html"
+                  class="text-reset text-decoration-none"
+                  >Team 4</a
+                >
+              </p>
+            </div>
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Login</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Registro</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Olvide mi contraseña</a
+                >
+              </p>
+            </div>
+
+            <div class="col-auto col-lg-2 mx-auto mb-4">
+              <h6 class="text-uppercase">Síguenos</h6>
+              <p>
+                <a
+                  href="https://www.tiktok.com/es/"
+                  target="_blank"
+                  class="text-decoration-none footerEnlacesNegros"
+                >
+                  <i class="bi-tiktok mx-2 text-light fs-4"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-instagram mx-2 text-light fs-4"></i
+                ></a>
+                <a
+                  href="https://twitter.com/?lang=es"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-twitter-x mx-2 text-light fs-4"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="text-center p-2"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        <p>© RollingStore todos los derechos reservados</p>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -665,7 +576,9 @@
       src="https://kit.fontawesome.com/a19956b3b8.js"
       crossorigin="anonymous"
     ></script>
+    <!-- script de sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- script del TEAM -->
-    <script src="./js/app.js"></script>
+    <script src="../js/app.js" type="module"></script>
   </body>
 </html>
