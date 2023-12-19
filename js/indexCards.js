@@ -74,7 +74,7 @@ const crearCardsInternacionales = (productoInt) => {
               <h4 class="tx-Gris tx-intermedio fs-6 fw-bold pt-3">
                 $ ${productoInt.precio}
               </h4>
-              <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter">
+              <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter cardTitulo">
               ${productoInt.nombre.toUpperCase()}
               </h4>
               <button class="btn btn-info mt-1" onclick="verDetalleProductoInternacional('${productoInt.id}')">Ver Detalle</button>
@@ -99,7 +99,7 @@ const crearCardsDesdeListaInternacional = () => {
 
     mensajeSinProducto.innerHTML = `
       <img
-        src="./img/fondos/sinproductos.jpg"
+        src="./img/fondos/sinproductos3.jpg"
         alt="No hay productos cargados"
         class="img-fluid imgSinProductos brilloImagenesSeccionPrincipal"
       />

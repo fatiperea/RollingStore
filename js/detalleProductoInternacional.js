@@ -2,8 +2,9 @@ const parametroURLInter = new URLSearchParams(window.location.search);
 const idProductoInternacional = parametroURL.get("id");
 const productoNuevoInter = JSON.parse(localStorage.getItem("listaProduKey2"));
 const productoBuscadoInter = productoNuevoInter.find(
-  (itemProductoInter) => itemProductoInter.id === idProducto
+  (itemProductoInter) => itemProductoInter.id === idProductoInternacional
 );
+
 const mainDetalleProductoInter = document.querySelector(
   "#detallesInternacionales"
 );
@@ -29,9 +30,10 @@ mainDetalleProductoInter.innerHTML += ` <section>
     <div class="col-md-5 textoDetallesProd">
       <h5 class="tituloDetallesProd tx-Gris">${productoBuscadoInter.nombre.toUpperCase()}</h5>
 
-      <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${
-        productoBuscadoInter.id.slice(0 ,5)
-      }</p>
+      <p class="textoPagDetalles tx-parrafo tx-Gris">Código: ${productoBuscadoInter.id.slice(
+        0,
+        5
+      )}</p>
       <p class="precioDetalles fw-bold tx-parrafo">Precio: $${
         productoBuscadoInter.precio
       }</p>
@@ -39,7 +41,7 @@ mainDetalleProductoInter.innerHTML += ` <section>
       <!-- Agregar producto al carrito -->
 
       <div
-        class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito"
+        class="text-center col-12 my-3 my-md-5 tx-parrafo btn btnAgregarCarrito btnAgregarCarritoInter"
       >
         <a href="../pages/carritoDeCompras.html" class="linkAgregarCarrito"
           ><i class="bi bi-cart-fill"> </i>Agregar al carrito</a
@@ -98,3 +100,21 @@ mainDetalleProductoInter.innerHTML += ` <section>
   </div>
 </div>
 </article>`;
+
+const btnAgregarCarritoInter = document.querySelector(".btnAgregarCarritoInter");
+
+function agregarAlCarritoInter(producto) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const productoExistente = carrito.find(item => item.id === producto.id);
+  if (productoExistente) {
+    productoExistente.cantidad += 1;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  window.location.href = "../pages/carritoDeCompras.html";
+}
+
+btnAgregarCarritoInter.addEventListener("click", function () {
+  agregarAlCarritoInter(productoBuscadoInter);
+});
