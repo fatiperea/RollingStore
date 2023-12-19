@@ -157,7 +157,7 @@ const buscarProducto = (e) => {
 
   if (listaTotal.length > 0) {
     for (let i = 0; i < listaTotal.length; i++) {
-      if (listaTotal[i].nombre.toUpperCase() === buscado) {
+      if (listaTotal[i].nombre.toUpperCase(). includes(buscado)) {
         encontrado = true;
         productoEncontrado = listaTotal[i];
 
