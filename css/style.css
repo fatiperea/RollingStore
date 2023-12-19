@@ -163,6 +163,16 @@ main {
 .brilloImagenesSeccionPrincipal:hover img {
   transform: scale(1.1) rotate(1deg);
 }
+#contenedorBuscado .modal-header .modal-body .modal-footer{
+  width: 70%;
+} 
+#contenedorBuscado p{
+  font-size: x-large;
+}
+#contenedorBuscado img{
+  width: 100%;
+  object-fit: cover;
+}
 
 /* navBar nacho*/
 .navbar {
@@ -383,6 +393,9 @@ main {
     height: 230px;
     width: 230px;
   }
+  .tamañoResponsiveImagenesDeSecciones img{
+      object-fit: cover;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -390,6 +403,9 @@ main {
     height: 210px;
     width: 185px;
   }
+  .tamañoResponsiveImagenesDeSecciones img{
+    object-fit: cover;
+}
   #btnIngresaProducto,
   #btnElijeTabla,
   #inputBuscaProducto {

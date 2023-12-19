@@ -1,15 +1,23 @@
 /*------------------ VARIABLES GLOBALES ------------- */
+
 const contenedorCardsNacionales = document.getElementById(
   "contenedorCardsNacionales"
 );
+
 const contenedorCardsInternacionales = document.getElementById(
   "contenedorCardsInternacionales"
 );
+
+const formBuscarProducto = document.querySelector("form");
+
 const listaNacionales = JSON.parse(localStorage.getItem("listaProduKey"));
 const listaInternacionales = JSON.parse(localStorage.getItem("listaProduKey2"));
 
+const listaTotal = listaNacionales.concat(listaInternacionales);
+
 /* -----------------FUNCIONES --------------------- */
 /* para las nacionales */
+
 const crearCardNacional = (producto) => {
   contenedorCardsNacionales.innerHTML += `
         <div class="col-sm-6 col-md-4 col-lg-3 mb-3 text-center h-100">
@@ -26,12 +34,15 @@ const crearCardNacional = (producto) => {
               <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter cardTitulo">
               ${producto.nombre.toUpperCase()}
               </h4>
-              <button class="btn btn-info mt-1" onclick="verDetalleProductoNacional('${producto.id}')">Ver Detalle</button>
+              <button class="btn btn-info mt-1" onclick="verDetalleProductoNacional('${
+                producto.id
+              }')">Ver Detalle</button>
             </div>
           </div>
         </div>
       `;
 };
+
 const crearCardsDesdeLista = () => {
   if (listaNacionales && listaNacionales.length > 0) {
     listaNacionales.forEach((producto) => {
@@ -77,7 +88,9 @@ const crearCardsInternacionales = (productoInt) => {
               <h4 class="tx-Gris tx-Intermedio fs-5 fw-lighter cardTitulo">
               ${productoInt.nombre.toUpperCase()}
               </h4>
-              <button class="btn btn-info mt-1" onclick="verDetalleProductoInternacional('${productoInt.id}')">Ver Detalle</button>
+              <button class="btn btn-info mt-1" onclick="verDetalleProductoInternacional('${
+                productoInt.id
+              }')">Ver Detalle</button>
             </div>
           </div>
         </div>
@@ -111,16 +124,98 @@ const crearCardsDesdeListaInternacional = () => {
     contenedorCardsInternacionales.appendChild(mensajeSinProducto);
   }
 };
+
 //detalle producto nacional
 window.verDetalleProductoNacional = (idProducto) => {
   window.location.href =
-  window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
 };
+
 //detalle producto internacional
 window.verDetalleProductoInternacional = (idProdInter) => {
   window.location.href =
-  window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProdInter;
 };
+
+window.verDetalleProducto = (idProd) => {
+  console.log(idProd);
+  console.log(listaTotal.id);
+
+  window.location.href =
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProd;
+};
+
+//filtrar
+
+const buscarProducto = (e) => {
+  e.preventDefault();
+  const buscado = document.getElementById("inputBuscar").value.toUpperCase();
+  
+  let encontrado = false; let productoEncontrado;
+  if (listaTotal.length > 0) {
+    
+    for (let i = 0; i < listaTotal.length; i++) {
+      if (listaTotal[i].nombre.toUpperCase() === buscado) {
+        encontrado = true;
+         productoEncontrado = listaTotal[i];
+      }
+    }
+
+    if (encontrado) {
+      const modalMostrarProducto = new bootstrap.Modal(
+        document.getElementById("productoBuscado")
+      );
+      const contenedorBuscado = document.getElementById("contenedorBuscado");
+
+      contenedorBuscado.innerHTML += `<div class="modal-header">
+            <h3 class="modal-title fs-5" id="buscarProductoLabel">
+              Buscaste: ${productoEncontrado.nombre.toUpperCase()}
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img src="${productoEncontrado.img}" alt="${
+        productoEncontrado.nombre
+      }" />
+            <p>Precio: <b>$${productoEncontrado.precio}</b></p>
+            <div class="modal-footer">
+
+            <button class="btn btn-primary" onclick="verDetalleProducto('${
+              productoEncontrado.id
+            }')">
+              Ver Detalle
+            </button>
+            </div>
+          </div>`;
+
+      modalMostrarProducto.show();
+    }
+
+    else {
+      Swal.fire({
+        icon: "error",
+        title: "Ups!",
+        text: "Lo sentimos, por el momento no contamos con ese producto!",
+      });
+    }
+  } else if (listaTotal.length === 0) {
+    Swal.fire({
+      icon: "error",
+      title: "Ups!",
+      text: "Lo sentimos, por ahora no contamos con ese producto",
+    });
+  }
+  formBuscarProducto.reset();
+};
+
 /* ------------- LÓGICA EXTRA -------------- */
+
 crearCardsDesdeLista();
 crearCardsDesdeListaInternacional();
+
+formBuscarProducto.addEventListener("submit", buscarProducto);
