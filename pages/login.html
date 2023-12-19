@@ -156,46 +156,65 @@
         </div>
       </nav>
     </header>
-    <main class="container w-75 mt-3">
+    <main class="container mt-3">
       <div class="row align-items-lg-stretch">
         <div
           class="col bg-light-subtle border border-light-subtle shadow-sm p-5 my-5"
         >
           <div>
-            <div class="text-end">
+            <div class="text-end container">
               <img src="../img/logo.png" width="250" alt="logo" />
             </div>
-            <h2 class="text-center py-3" aria-describedby="bienvenido al login ingrese sus datos">Bienvenido</h2>
-            <form action="" id="formLog">
-              <div class="mb-4 w-75 mx-auto">
-                <label class="form-label">Nombre de usuario</label>
-                <input type="text" class="form-control" id="user" autocomplete="off" placeholder="ingrese usuario" minlength="5" maxlength="15" aria-describedby="nombre de usuario" required/>
-              </div>
-              <div class="mb-4 w-75 mx-auto">
-                <label class="form-label">Correo Electronico</label>
-                <input type="email" class="form-control" id="email" placeholder="ingrese su e-mail" minlength="9" aria-describedby="email" required/>
-              </div>
-              <div class="mb-4 w-75 mx-auto">
-                <label class="form-label text-start">Contraseña</label>
-                <input type="password" class="form-control" id="pass" placeholder="minimo 8 caracteres" minlength="8" maxlength="20" aria-describedby="contraseña" required/>
+            <h2
+              class="text-center py-3 tx-Intermedio tx-Gris display-4"
+              aria-describedby="bienvenido al login ingrese sus datos"
+            >
+              Bienvenido
+            </h2>
+            <form id="formLog">
+              <div class="mb-4">
+                <label class="form-label tx-parrafo tx-Gris" for="user">Nombre de usuario</label>
                 <input
                   type="text"
                   class="form-control"
                   id="user"
                   autocomplete="off"
+                  placeholder="ingrese usuario"
+                  minlength="5"
+                  maxlength="15"
+                  aria-describedby="nombre de usuario"
                   required
                 />
               </div>
-              <div class="mb-4 w-75 mx-auto">
-                <label class="form-label">Correo Electronico</label>
-                <input type="email" class="form-control" id="email" required />
+              <div class="mb-4">
+                <label class="form-label tx-parrafo tx-Gris" for="email" >Correo Electronico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="ingrese su e-mail"
+                  minlength="9"
+                  aria-describedby="email"
+                  required
+                />
               </div>
-              <div class="mb-4 w-75 mx-auto">
-                <label class="form-label text-start">Contraseña</label>
+              <div class="mb-4">
+                <label class="form-label text-start tx-parrafo tx-Gris" for="pass">Contraseña</label>
                 <input
                   type="password"
                   class="form-control"
                   id="pass"
+                  placeholder="minimo 8 caracteres"
+                  minlength="8"
+                  maxlength="20"
+                  aria-describedby="contraseña"
+                  required
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="user"
+                  autocomplete="off"
                   required
                 />
               </div>
@@ -213,6 +232,140 @@
         </div>
       </div>
     </main>
+    <footer class="text-center text-lg-start foot">
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-auto col-md-12 text-md-center col-lg-3 mx-auto">
+              <a href="../index.html">
+                <img
+                  class="img-fluid"
+                  src="../img/logo.png"
+                  alt="logo rolling store"
+                />
+              </a>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Norte</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Buenos Aires</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Pais</a
+                >
+              </p>
+            </div>
+
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Internacional</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Europa</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Asia</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Sudamerica</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Mundo</a
+                >
+              </p>
+            </div>
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Nosotros</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/acercaDeNosotros.html"
+                  class="text-reset text-decoration-none"
+                  >Team 4</a
+                >
+              </p>
+            </div>
+            <div class="col-auto mx-auto mb-4">
+              <h6 class="text-uppercase">Login</h6>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Registro</a
+                >
+              </p>
+              <p class="footerEnlacesNegros">
+                <a
+                  href="../pages/error404.html"
+                  class="text-reset text-decoration-none"
+                  >Olvide mi contraseña</a
+                >
+              </p>
+            </div>
+
+            <div class="col-auto col-lg-2 mx-auto mb-4">
+              <h6 class="text-uppercase">Siguenos</h6>
+              <p>
+                <a
+                  href="https://www.tiktok.com/es/"
+                  target="_blank"
+                  class="text-decoration-none footerEnlacesNegros"
+                >
+                  <i class="bi-tiktok mx-2 text-light fs-4"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-instagram mx-2 text-light fs-4"></i
+                ></a>
+                <a
+                  href="https://twitter.com/?lang=es"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="bi-twitter-x mx-2 text-light fs-4"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="text-center p-2"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        <p>© RollingStore todos los derechos reservados</p>
+      </div>
+    </footer>
 
     <!-- Scripts -->
     <!-- script bootstrap -->
