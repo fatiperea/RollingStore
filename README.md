@@ -1,10 +1,10 @@
 # CRUD e-Commerce con js/bootstrap
 
-## Proyecto fin de modulo 2 - RollingCode School
+## Proyecto fin de módulo 2 - RollingCode School
 
-### Creacion de sitio web de e-commerce con alta, baja, modificacion y busqueda de productos en local storage
+### Creación de sitio web de e-commerce con alta, baja, modificación y búsqueda de productos en local storage
 
-### Librerias y recursos 📚
+### Librerías y recursos 📚
 - Bootstrap v5.3.2 https://getbootstrap.com/
 - Fontawsome https://fontawesome.com/
 - Sweetalert2 https://sweetalert2.github.io/
@@ -12,7 +12,7 @@
 
 ## Demo
 
-- Deply del proyecto https://dev--rollingstore-team4.netlify.app/
+- Deploy del proyecto https://dev--rollingstore-team4.netlify.app/
 
 ## Comenzando 🚀
 
@@ -27,7 +27,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 _Todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
 * **Emir Paradi** [GitHub](https://github.com/penguinEm)
-* **Fatima Perea** [GitHub](https://github.com/fatiperea)
+* **Fátima Perea** [GitHub](https://github.com/fatiperea)
 * **Juan Pablo Toledo**  [GitHub](https://github.com/pablotoledo87)
 * **Natalia Lopez**  [GitHub](https://github.com/NataliaGabriela)
 * **Jose Ignacio Medina Jimenez**  [GitHub](https://github.com/Nachocode87)
